@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title= Prototyping
+    title= ":event_name"
     meta(name="viewport", content="width=device-width,user-scalable=no,maximum-scale=1.0,initial-scale=1.0")
     script(type='text/javascript', src='javascripts/lib/jquery-1.11.2.min.js')
     script(type='text/javascript', src='javascripts/lib/velocity.min.js')
@@ -9,4 +9,13 @@ html(lang="en")
     script(type='text/javascript', src='javascripts/app.js')
     link(rel='stylesheet', type='text/css', href='styles/main.css')
   body
-    h1 Content goes here!
+    .loader
+    .card-holder
+      .card-image-holder
+        img(alt="", src="")
+    .event-info
+      .place
+      .date-time
+    .attending-actions
+      .will-attend.action
+      .will-not-attend.action

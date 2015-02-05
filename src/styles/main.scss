@@ -1,1 +1,24 @@
 @import "lib/normalize";
+@import "lib/mixins";
+@import "lib/colors";
+
+@include keyframes(spin) {
+  100% { @include prefix(transform, rotate(360deg)) };
+}
+
+.loader {
+  font-size: 18px;
+  padding: 10px 0 40px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  &:after {
+    background-color: $driftwood;
+    content: " ";
+    display: block;
+    height: 6px;
+    margin: 0 auto;
+    width: 20px;
+    @include prefix(animation, spin .75s linear infinite);
+  }
+}
