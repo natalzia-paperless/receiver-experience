@@ -41,6 +41,22 @@ module.exports = function(grunt) {
         flatten: false,
         filter: 'isFile'
       },
+      img: {
+        expand: true,
+        cwd: 'src/img',
+        src: '**',
+        dest: 'public/img',
+        flatten: false,
+        filter: 'isFile'
+      },
+      fonts: {
+        expand: true,
+        cwd: 'src/webfonts',
+        src: '**',
+        dest: 'public/webfonts',
+        flatten: false,
+        filter: 'isFile'
+      }
     },
     clean: {
       public: ["public/"]

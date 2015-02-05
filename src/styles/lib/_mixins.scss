@@ -20,3 +20,10 @@
   }
   #{$prop}: #{$val};
 }
+
+@mixin calc($prop, $val) {
+  @each $pre in -webkit-, -moz-, -ms- {
+    #{$prop}: $pre + calc(#{$val});
+  }
+  #{$prop}: calc(#{$val});
+}

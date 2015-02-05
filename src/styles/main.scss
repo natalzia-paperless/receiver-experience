@@ -1,6 +1,14 @@
+@import "compass/css3";
 @import "lib/normalize";
 @import "lib/mixins";
 @import "lib/colors";
+@import "lib/fonts";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  * { @include prefix(box-sizing, border-box);  }
+}
 
 @include keyframes(spin) {
   100% { @include prefix(transform, rotate(360deg)) };
@@ -12,6 +20,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  z-index: 2;
   &:after {
     background-color: $driftwood;
     content: " ";
@@ -20,5 +29,131 @@
     margin: 0 auto;
     width: 20px;
     @include prefix(animation, spin .75s linear infinite);
+  }
+}
+
+.card-holder {
+  background-color: #f0f0f0;
+  @include calc(height, '100% - 135px');
+  position: relative;
+  width: 100%;
+  .card-image-holder {
+    max-height: 90%;
+    left: 50%;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    @include transform(translate(-50%, -50%));
+    &.animate-in {
+      $duration: .75s;
+      $bezier: cubic-bezier(0.86, 0, 0.07, 1);
+      @include prefix(animation, card-in $duration);
+      @include prefix(animation-timing-function, $bezier);
+      opacity: 1;
+    }
+  }
+  img {
+    max-height: 100%;
+    position:relative;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.event-info {
+  opacity: 0;
+  position:relative;
+  &.animate-in {
+    $duration: .35s;
+    @include prefix(animation, info-in $duration);
+    //@include prefix(animation-timing-function, ease-in);
+    @include prefix(animation-fill-mode, forwards);
+    @include prefix(animation-delay, .85s);
+  }
+}
+
+.center-this {
+  left: 50%;
+  top: 50%;
+  position: relative;
+  @include transform(translate(-50%, -50%));
+  &.loader {
+    position: absolute;
+  }
+}
+
+.subhead {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.event-name {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.actions-container {
+  background-color: #f0f0f0;
+  height: 135px;
+  text-align: center;
+  padding-bottom: 35px;
+  width: 100%;
+}
+
+.content-container {
+  height: 100%;
+  min-height: 50px;
+  width: 100%;
+}
+.action {
+  display: inline-block;
+  background-color: $white;
+  font-size: 12px;
+  color: $driftwood;
+  margin-top: 15px;
+  padding: 10px 0;
+  position: relative;
+  opacity: 0;
+  border: 1px solid $driftwood;
+  width: 130px;
+  text-align: center;
+  &:first-child {
+    margin-right: 10px;
+  }
+  &.animate-in {
+    $duration: .35s;
+    @include prefix(animation, info-in $duration);
+    @include prefix(animation-fill-mode, forwards);
+    
+    &:first-child {
+      @include prefix(animation-delay, 1s);
+    }
+    &:last-child {
+      @include prefix(animation-delay, 1.15s);
+    }
+  }
+}
+
+@include keyframes(card-in) {
+  0% {
+    opacity: 0;
+    @include prefix(transform, translate(-50%, -100%));
+  }
+  100% {
+    opacity: 1;
+    @include prefix(transform, translateY(-50%, -50%));
+  }
+}
+
+@include keyframes(info-in) {
+  0%{
+    opacity: 0;
+    top: 15px;
+  }
+  100% {
+    opacity: 1;
+    top:0px;
   }
 }
