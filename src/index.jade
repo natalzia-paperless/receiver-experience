@@ -26,5 +26,15 @@ html(lang="en")
           .attending-actions
             .will-attend.action.helvetica-light Will Attend
             .will-not-attend.action.helvetica-light Will Not Attend
-      
-
+      .event-details.helvetica-light
+        .event-date.
+          Saturday, 12th Feb, 2015
+        .event-time.
+          7PM at Waterfront Tavern
+        .event-location.
+          115 Atlantic Avenue, Brooklyn, NY
+      .placeholder-container
+        - var n = 0
+        while n < 4
+          -n++
+          .placeholder-box
