@@ -30,11 +30,14 @@ html, body {
     width: 20px;
     @include prefix(animation, spin .75s linear infinite);
   }
+  &.center-this {
+    top: 40%;
+  }
 }
 
 .card-holder {
   background-color: #f0f0f0;
-  @include calc(height, '100% - 135px');
+  @include calc(height, '100% - 170px');
   position: relative;
   width: 100%;
   .card-image-holder {
@@ -42,8 +45,9 @@ html, body {
     left: 50%;
     width: 75%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     opacity: 0;
+    z-index: 1;
     @include transform(translate(-50%, -50%));
     &.animate-in {
       $duration: .75s;
@@ -59,6 +63,7 @@ html, body {
     max-width: 100%;
     margin: 0 auto;
     display: block;
+    @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
     &.envelope {
       position: absolute;
       left: 50%;
@@ -68,6 +73,7 @@ html, body {
       z-index: -1;
       @include prefix(transform-origin, -80% 90%);
       @include prefix(transform, rotate(-42deg));
+      @include box-shadow(none);
       &.animate-in {
         $duration: .35s;
         $bezier: cubic-bezier(0.86, 0, 0.07, 1);
@@ -108,22 +114,29 @@ html, body {
   font-size: 12px;
 }
 
+.event-host {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 .event-name {
   font-size: 20px;
   margin-top: 5px;
 }
 
 .actions-container {
-  background-color: #f0f0f0;
-  height: 135px;
+  background-color: #fff;
+  height: 180px;
   text-align: center;
-  padding-bottom: 35px;
+  padding: 50px 0 25px;
+  position: relative;
   width: 100%;
+  top: -15px;
 }
 
 .content-container {
   height: 100%;
-  min-height: 50px;
+  min-height: 560px;
   width: 100%;
 }
 .action {
