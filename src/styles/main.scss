@@ -40,12 +40,13 @@ html, body {
   @include calc(height, '100% - 170px');
   position: relative;
   width: 100%;
+  max-height: 485px;
   .card-image-holder {
     max-height: 90%;
     left: 50%;
     width: 75%;
     position: absolute;
-    top: 60%;
+    top: 57%;
     opacity: 0;
     z-index: 1;
     @include transform(translate(-50%, -50%));
