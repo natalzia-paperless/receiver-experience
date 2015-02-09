@@ -11,9 +11,11 @@ html(lang="en")
   body
     .loader.center-this
     .content-container
+      .draggable-card-container
+          img.draggable-card(alt="", src="img/card.png")
       .card-holder
-        .card-image-holder
-          img(alt="", src="img/card.png")
+        .card-image-holder.js-card-image
+          img.card-image(alt="", src="img/card.png")
           img.envelope(alt="", src="img/envelope.png")
       .actions-container
         .center-this

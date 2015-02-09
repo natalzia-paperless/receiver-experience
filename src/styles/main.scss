@@ -8,6 +8,9 @@ html, body {
   height: 100%;
   width: 100%;
   * { @include prefix(box-sizing, border-box);  }
+  &.card-overlay {
+    overflow: hidden;
+  }
 }
 
 @include keyframes(spin) {
@@ -35,18 +38,54 @@ html, body {
   }
 }
 
+.draggable-card-container {
+  background-color: #f0f0f0;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 60%;
+  z-index: 5;
+  @include transition(height .75s cubic-bezier(0.86, 0, 0.07, 1));
+  &.open {
+    height: 100%;
+    @include transition(height .75s cubic-bezier(0.86, 0, 0.07, 1));
+    z-index: 5;
+  }
+  .draggable-card {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 90%;
+    @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
+    &.show {
+      display: block;
+    }
+    &.scaled {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.none {
+  display: none !important;
+}
+
 .card-holder {
   background-color: #f0f0f0;
   @include calc(height, '100% - 170px');
   position: relative;
   width: 100%;
   max-height: 485px;
+  z-index: 10;
   .card-image-holder {
     max-height: 90%;
     left: 50%;
-    width: 75%;
+    width: 70%;
     position: absolute;
-    top: 57%;
+    top: 58%;
     opacity: 0;
     z-index: 1;
     @include transform(translate(-50%, -50%));
@@ -56,6 +95,16 @@ html, body {
       @include prefix(animation, card-in $duration);
       @include prefix(animation-timing-function, $bezier);
       opacity: 1;
+    }
+    &.is-in {
+      opacity: 1;
+      @include prefix(transform, translateY(-50%, -50%));
+    }
+    &.grow-pls {
+      .envelope {
+        left: -100%;
+        @include transition(left .25s cubic-bezier(0.86, 0, 0.07, 1));
+      }
     }
   }
   img {
@@ -75,6 +124,7 @@ html, body {
       @include prefix(transform-origin, -80% 90%);
       @include prefix(transform, rotate(-42deg));
       @include box-shadow(none);
+      @include transition(left .25s cubic-bezier(0.86, 0, 0.07, 1));
       &.animate-in {
         $duration: .35s;
         $bezier: cubic-bezier(0.86, 0, 0.07, 1);
