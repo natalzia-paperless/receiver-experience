@@ -85,6 +85,10 @@ module.exports = function(grunt) {
       jade: {
         files: ["src/index.jade"],
         tasks: ['jade']
+      },
+      img: {
+        files: ["src/img/*"],
+        tasks: ['copy:img']
       }
     }
   });
