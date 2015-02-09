@@ -42,14 +42,14 @@ html, body {
   width: 100%;
   max-height: 485px;
   .card-image-holder {
+    bottom: 0px;
     max-height: 90%;
     left: 50%;
     width: 75%;
     position: absolute;
-    top: 57%;
     opacity: 0;
     z-index: 1;
-    @include transform(translate(-50%, -50%));
+    @include transform(translate(-50%, 0%));
     &.animate-in {
       $duration: .75s;
       $bezier: cubic-bezier(0.86, 0, 0.07, 1);
