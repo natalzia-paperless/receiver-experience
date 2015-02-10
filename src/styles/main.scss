@@ -224,7 +224,7 @@ html, body {
     margin-right: 10px;
   }
   &.animate-in {
-    $duration: .35s;
+    $duration: .25s;
     @include prefix(animation, info-in $duration);
     @include prefix(animation-fill-mode, forwards);
     
