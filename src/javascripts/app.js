@@ -86,6 +86,7 @@ $(function(){
     },200);
   });
 
+
   function zoomImage() {
     $('.hammer-me img').toggleClass('scaled');
     $dragCardContainer.toggleClass('no-scroll');
@@ -129,7 +130,7 @@ $(function(){
       var screenWidth = $(window).width();
 
       $dragCardContainer.scrollLeft(screenWidth * .87);
-    },200);
+    }, 300);
 
     //set up card for movement
     /*$('html, body').addClass('card-overlay');
