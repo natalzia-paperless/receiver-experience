@@ -6,6 +6,7 @@ $(function(){
     lastTouchEvent: {},
     startScale: 1,
     cardInitialPosition: {},
+    initialTouch: {},
     numTouches: 0
   };
 
@@ -39,23 +40,26 @@ $(function(){
     if (!touch) return;
     var xy = {x: touch.pageX, y: touch.pageY};
     mainOptions.lastTouchEvent = xy;
+    mainOptions.initialTouch = xy;
   });
 
   $('.hammer-me').on('touchmove', function(e) {
-    if (!mainOptions.trackingMovement) {
-      return;
-    }
-    e.preventDefault();
     var touch = e.originalEvent.touches[0];
     if (!touch) return;
     var xy = {x: touch.pageX, y: touch.pageY};
 
     var deltaX = xy.x - mainOptions.lastTouchEvent.x;
     var deltaY = xy.y - mainOptions.lastTouchEvent.y;
-    
-    moveCard(deltaX, deltaY);
 
     mainOptions.lastTouchEvent = xy;
+
+    if (!mainOptions.trackingMovement) {
+      return;
+    }
+
+    e.preventDefault();
+    
+    moveCard(deltaX, deltaY);
   });
 
   $('.hammer-me').on('touchend', function(e) {
@@ -69,7 +73,14 @@ $(function(){
     }
     setTimeout(function() {
       if (mainOptions.numTouches === 1 && !mainOptions.trackingMovement) {
-        closeCardOverlay();
+        var touch = mainOptions.lastTouchEvent;
+        if (!touch) return;
+        var xy = {x: touch.x, y: touch.y};
+
+        console.log(xy.x);
+        console.log(mainOptions.initialTouch.x);
+        if (xy.x === mainOptions.initialTouch.x)
+          closeCardOverlay();
       }
       mainOptions.numTouches = 0;
     },200);
