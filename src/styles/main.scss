@@ -51,12 +51,24 @@ html, body {
   overflow-y: hidden;
   opacity: 0;
   -webkit-overflow-scrolling: touch;
+  &.no-scroll {
+    overflow-x: hidden;
+  }
   &.open {
     display: block;
     $duration: .35s;
     $bezier: cubic-bezier(0.86, 0, 0.07, 1);
     @include prefix(animation, fade-in $duration);
     //@include prefix(animation-timing-function, $bezier);
+    @include prefix(animation-timing-function, ease-in);
+    @include prefix(animation-fill-mode, forwards);
+  }
+  &.close {
+    -webkit-animation-direction: reverse;
+    $duration: .35s;
+    display: block;
+    $bezier: cubic-bezier(0.86, 0, 0.07, 1);
+    @include prefix(animation, fade-out $duration);
     @include prefix(animation-timing-function, ease-in);
     @include prefix(animation-fill-mode, forwards);
   }
@@ -80,6 +92,14 @@ html, body {
     top: 50%;
     img {
       max-width: 100%;
+      &.scaled {
+        max-width: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        //-webkit-transform: translate(-50%, -50%);
+      }
     }
     &:first-child {
       padding-left: 4.5%;
@@ -117,6 +137,7 @@ html, body {
     opacity: 0;
     z-index: 1;
     @include transform(translate(-50%, 0));
+    @include transition(transform .6s cubic-bezier(0.86, 0, 0.07, 1), bottom .6s);
     &.animate-in {
       $duration: .75s;
       $bezier: cubic-bezier(0.86, 0, 0.07, 1);
@@ -296,5 +317,14 @@ html, body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@include keyframes(fade-out) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
