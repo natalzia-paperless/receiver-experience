@@ -11,4 +11,16 @@ $(function(){
       $('.envelope').addClass('animate-in');
     });
   }
+
+  $('.will-attend').on('click', function() {
+    $('.will-not-attend').addClass('is-attending');
+    setTimeout(function() {
+      $('.will-attend .text').addClass('none');
+      $('.will-attend').addClass('is-attending');
+      
+      setTimeout(function() {
+        $('.attending-check').addClass('enter');
+      }, 600);
+    }, 350);
+  });
 });
