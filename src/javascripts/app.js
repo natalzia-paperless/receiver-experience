@@ -1,6 +1,8 @@
 $(function(){
   checkHash();
 
+  //var scroller = new IScroll('.draggable-card-container');
+
 
   var mainOptions = {
     trackingMovement: false,
@@ -9,9 +11,9 @@ $(function(){
     cardInitialPosition: {}
   };
 
+  var $dragCardContainer = $('.draggable-card-container');
   var $card = $('.draggable-card');
-
-  var hammertime = new Hammer(document.querySelector('.draggable-card-container'), {});
+  //var hammertime = new Hammer(document.querySelector('body'), {});
   var src = "/img/card.png";
   var img = new Image();
   img.src = src;
@@ -26,21 +28,15 @@ $(function(){
   }
 
   $('.js-card-image').on('click', function() {
-    window.history.pushState({cardOpen: true}, "", "#cardOpen");
+    // window.history.pushState({cardOpen: true}, "", "#cardOpen");
     
     openCardOverlay();
   });
 
-  hammertime.on('tap', function(e) {
-    /*if ($(e.target).hasClass('draggable-card')) {
-      return;
-    }*/
-    window.history.pushState({cardOpen: false}, "", "#cardClosed");
 
-    closeCardOverlay();
-  });
+  /** Card movement through touch interaction */
 
-  $card.on('touchstart', function(e) {
+  /*$card.on('touchstart', function(e) {
     e.preventDefault();
     mainOptions.trackingMovement = true;
     var touch = e.originalEvent.touches[0];
@@ -68,7 +64,7 @@ $(function(){
   $card.on('touchend', function(e) {
     e.preventDefault();
     mainOptions.trackingMovement = false
-  });
+  });*/
 
   function zoomImage(scale) {
     alert('whoa');
@@ -92,8 +88,18 @@ $(function(){
   }
 
   function openCardOverlay() {
-    //set up card for movement
     $('html, body').addClass('card-overlay');
+    $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
+
+    setTimeout(function() {
+      $dragCardContainer.addClass('open');
+      var screenWidth = $(window).width();
+
+      $dragCardContainer.scrollLeft(screenWidth * .87);
+    },400);
+
+    //set up card for movement
+    /*$('html, body').addClass('card-overlay');
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
     $('.draggable-card-container').addClass('open');
 
@@ -110,11 +116,11 @@ $(function(){
         top: top,
         left: left
       }
-    },750);
+    },750);*/
   }
 
   function closeCardOverlay() {
-    $card.animate({
+    /*$card.animate({
       top: mainOptions.cardInitialPosition.top,
       left: mainOptions.cardInitialPosition.left
     }, 250, function() {
@@ -123,7 +129,7 @@ $(function(){
       $('.draggable-card-container').removeClass('open');
       $('.card-holder').removeClass('none');
       $card.removeClass('show')
-    });
+    });*/
   }
 
   function checkHash() {
