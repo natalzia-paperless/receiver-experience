@@ -26,6 +26,7 @@ $(function(){
   }
 
   $('.js-card-image').on('click', function() {
+    window.history.pushState({cardOpen: true}, "", "#open");
     openCardOverlay();
   });
 
@@ -79,8 +80,10 @@ $(function(){
 
         console.log(xy.x);
         console.log(mainOptions.initialTouch.x);
-        if (xy.x === mainOptions.initialTouch.x)
+        if (xy.x === mainOptions.initialTouch.x) {
+          window.history.pushState({cardOpen: false}, "", "#closed");
           closeCardOverlay();
+        }
       }
       mainOptions.numTouches = 0;
     },200);
