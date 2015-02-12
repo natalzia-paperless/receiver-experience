@@ -7,7 +7,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  * { @include prefix(box-sizing, border-box);  }
+  * { @include prefix(box-sizing, border-box); -webkit-tap-highlight-color: rgba(0,0,0,0);  }
   &.card-overlay {
     overflow: hidden;
   }
@@ -231,7 +231,7 @@ html, body {
   background-color: #fff;
   height: 180px;
   text-align: center;
-  padding: 50px 0 25px;
+  padding: 50px 0 0;
   position: relative;
   width: 100%;
   top: -15px;
@@ -246,11 +246,13 @@ html, body {
 .event-details {
   font-size: 14px;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 25px 0;
+  position: relative;
+  margin-top: -15px;
 }
 
 .placeholder-container {
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .placeholder-box {
@@ -374,6 +376,78 @@ html, body {
     width: 37px;
     border-radius: 50%;
     @include calc(left, '50%');
+  }
+}
+
+.details-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  background-color: rgba(255,255,255,.9);
+  &.open {
+    display: block;
+    $duration: .3s;
+    @include prefix(animation, fade-in $duration);
+    opacity: 1;
+    .option {
+      @include prefix(animation, info-in .15s);
+      @include prefix(animation-fill-mode, forwards);
+      @include prefix(animation-timing-function, cubic-bezier(.17,.67,.83,.67));
+      @include prefix(animation-delay, .2s);
+      &:nth-child(2) {
+        @include prefix(animation-delay, .25s);
+      }
+      &:nth-child(3) {
+        @include prefix(animation-delay, .35s);
+      }
+    }
+  }
+}
+
+.overlay-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.details-options {
+  background-color: white;
+  border: 1px solid #eee;
+  width: 210px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -105px;
+  margin-top: -100px;
+  .header {
+    color: #aaa;
+    padding: 20px;
+    border-bottom: 1px solid #aaa;
+  }
+  .close-x {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    color: #aaa;
+    -webkit-transform: scaleX(1.3);
+    font-size: 24px;
+  }
+  .options-container {
+
+  }
+  .option, .option:visited, .option.active {
+    color: #111;
+    display: block;
+    padding: 0 20px 20px;
+    opacity: 0;
+    text-decoration: none;
+    &:first-child {
+      padding-top: 20px;
+    }
+    &:last-child {
+    }
   }
 }
 

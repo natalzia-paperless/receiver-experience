@@ -21,27 +21,33 @@ html(lang="en")
         .card-image-holder.js-card-image
           img.card-image(alt="", src="img/card.png")
           img.envelope(alt="", src="img/envelope.png")
-      .actions-container
-        .center-this
-          .event-info
-            .subhead.helvetica-light.
-              Please RSVP for
-            .event-name.garamond-italic.
-              Huzzah!
-            .event-host.helvetica-light Hosted by: Stampy and Envelette
-          .attending-actions
-            .will-attend.action.helvetica-light
-              .text.
-                Will Attend
-              .attending-check
-            .will-not-attend.action.helvetica-light Will Not Attend
-      .event-details.helvetica-light
-        .event-date.
-          Saturday, 12th Feb, 2015
-        .event-time.
-          7PM at Waterfront Tavern
-        .event-location.
-          115 Atlantic Avenue, Brooklyn, NY
+      .overlay-container
+        .actions-container
+          .center-this
+            .event-info
+              .subhead.helvetica-light.
+                Please RSVP for
+              .event-name.garamond-italic.
+                Huzzah!
+              .event-host.helvetica-light Hosted by: Stampy and Envelette
+            .attending-actions
+              .will-attend.action.helvetica-light Will Attend
+              .will-not-attend.action.helvetica-light Will Not Attend
+        .event-details.helvetica-light
+          .event-date.
+            Saturday, 12th Feb, 2015
+          .event-time.
+            7PM at Waterfront Tavern
+          .event-location.
+            115 Atlantic Avenue, Brooklyn, NY
+        .details-overlay
+          .details-options
+            .header.helvetica-light OPTIONS
+            .close-x.helvetica-light X
+            .options-container
+              a.option.helvetica-light(href="https://www.paperlesspost.com/events/10641885-8357076d/replies.ics") Add to Calendar
+              a.option.helvetica-light(href="https://maps.google.com/?q=115+Broadway+New+York+NY") Open in Google Maps
+              a.option.helvetica-light(href="http://maps.apple.com/?q=115+Broadway+New+York+NY+10006") Open in Apple Maps
       .placeholder-container
         - var n = 0
         while n < 4

@@ -208,4 +208,23 @@ $(function(){
     }, 350);
   });
 
+  $('.event-details').on('click', function() {
+    $('.details-overlay').css({opacity: ""}).addClass('open');
+  });
+
+  $('.details-overlay').on('click', function(e){
+    if ($(e.target).hasClass('details-overlay'))
+      closeDetailsOverlay();
+  });
+
+  $('.details-options .close-x').on('click', function() {
+    closeDetailsOverlay();
+  });
+
+  function closeDetailsOverlay(){
+    $('.details-overlay').animate({opacity: 0}, 300, function(){
+      $('.details-overlay').removeClass('open');
+    });
+  }
+
 });
