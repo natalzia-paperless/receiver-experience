@@ -201,6 +201,18 @@ html, body {
     $duration: .3s;
     @include prefix(animation, fade-in $duration);
     opacity: 1;
+    .option {
+      @include prefix(animation, info-in .15s);
+      @include prefix(animation-fill-mode, forwards);
+      @include prefix(animation-timing-function, cubic-bezier(.17,.67,.83,.67));
+      @include prefix(animation-delay, .2s);
+      &:nth-child(2) {
+        @include prefix(animation-delay, .25s);
+      }
+      &:nth-child(3) {
+        @include prefix(animation-delay, .35s);
+      }
+    }
   }
 }
 
@@ -212,7 +224,7 @@ html, body {
 
 .details-options {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   width: 210px;
   position: absolute;
   top: 50%;
@@ -239,6 +251,7 @@ html, body {
     color: #111;
     display: block;
     padding: 0 20px 20px;
+    opacity: 0;
     text-decoration: none;
     &:first-child {
       padding-top: 20px;
