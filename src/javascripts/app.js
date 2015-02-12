@@ -131,7 +131,7 @@ $(function(){
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
 
     setTimeout(function() {
-      $dragCardContainer.removeClass('close').addClass('open');
+      $dragCardContainer.css('display','block').removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
       $dragCardContainer.scrollLeft(screenWidth * .9);
@@ -171,7 +171,7 @@ $(function(){
     });*/
 
     if ($dragCardContainer.hasClass('open')) {
-      $dragCardContainer.css('display','block').removeClass('open').addClass('close');
+      $dragCardContainer.removeClass('open').addClass('close');
 
       setTimeout(function() {
         $('html, body').removeClass('card-overlay');
