@@ -134,7 +134,7 @@ $(function(){
       $dragCardContainer.removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
-      $dragCardContainer.scrollLeft(screenWidth * .87);
+      $dragCardContainer.scrollLeft(screenWidth * .9);
     }, 300);
 
     //set up card for movement
