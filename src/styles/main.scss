@@ -65,7 +65,6 @@ html, body {
   }
   &.close {
     $duration: .35s;
-    display: block;
     $bezier: cubic-bezier(0.86, 0, 0.07, 1);
     @include prefix(animation, fade-out $duration);
     @include prefix(animation-timing-function, ease-in);
@@ -78,7 +77,6 @@ html, body {
     position: relative;
     width: 190%;
     height: 100%;
-    //-webkit-transform: translateZ(0);
     list-style-type: none;
   }
   li {

@@ -170,13 +170,15 @@ $(function(){
       $card.removeClass('show')
     });*/
 
-    $dragCardContainer.removeClass('open').addClass('close');
+    if ($dragCardContainer.hasClass('open')) {
+      $dragCardContainer.css('display','block').removeClass('open').addClass('close');
 
-    setTimeout(function() {
-      $('html, body').removeClass('card-overlay');
-      $('.js-card-image').removeClass('grow-pls');
-      $dragCardContainer.removeClass('close');
-    },350);
+      setTimeout(function() {
+        $('html, body').removeClass('card-overlay');
+        $('.js-card-image').removeClass('grow-pls');
+        $dragCardContainer.removeClass('close').css('display','none');
+      },350);
+    }
   }
 
   function checkHash() {
