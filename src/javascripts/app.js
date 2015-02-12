@@ -178,7 +178,7 @@ $(function(){
   }
 
   function checkHash() {
-    if (window.location.hash.indexOf('cardOpen') !== -1) {
+    if (window.location.hash.indexOf('open') !== -1) {
       openCardOverlay();
     }
   }
