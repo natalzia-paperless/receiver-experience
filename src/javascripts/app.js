@@ -222,9 +222,17 @@ $(function(){
   });
 
   function closeDetailsOverlay(){
+    $('.details-options .option').removeClass('hovered');
     $('.details-overlay').animate({opacity: 0}, 300, function(){
       $('.details-overlay').removeClass('open');
     });
   }
+
+  $('.details-options .option').on('touchstart', function() {
+    $(this).addClass('hovered');
+  });
+  $('.details-options .option').on('touchend', function() {
+    $(this).removeClass('hovered');
+  });
 
 });
