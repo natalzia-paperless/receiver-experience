@@ -261,31 +261,119 @@ html, body {
 }
 
 .action {
-  display: inline-block;
   background-color: $white;
   font-size: 12px;
   color: $driftwood;
   margin-top: 15px;
   padding: 10px 0;
-  position: relative;
+  position: absolute;
   opacity: 0;
   border: 1px solid $driftwood;
   width: 130px;
-  text-align: center;
-  &:first-child {
-    margin-right: 10px;
-  }
+  @include transform(translate(-50%, -50%));
   &.animate-in {
-    $duration: .25s;
-    @include prefix(animation, info-in $duration);
+    $duration: .35s;
+    @include prefix(animation, actions-in $duration);
     @include prefix(animation-fill-mode, forwards);
     
     &:first-child {
+      @include calc(left, '50% - 68px');
       @include prefix(animation-delay, 1s);
     }
     &:last-child {
+      @include calc(left, '50% + 67px');
       @include prefix(animation-delay, 1.15s);
     }
+  }
+  &.will-attend.is-attending {
+    height: 37px;
+    opacity: 1;
+    top: 50%;
+    padding: 0;
+    $checkbox-duration: .55s;
+    @include prefix(animation, will-attend-circle $checkbox-duration);
+    @include prefix(animation-fill-mode, forwards);
+    @include prefix(animation-delay, 0s);
+    @include transform(-50%, -50%);
+  }
+  &.will-not-attend.is-attending {
+    $checkbox-duration: .35s;
+    @include prefix(animation, info-out $checkbox-duration);
+    @include prefix(animation-fill-mode, forwards);
+    @include prefix(animation-delay, 0s);
+  }
+}
+
+.attending-actions {
+  position: relative;
+  min-height: 52px;
+}
+
+.none {
+  display: none;
+}
+
+.attending-check {
+  display: none;
+  position: relative;
+  width: 37px;
+  height: 37px;
+  &.enter {
+    display: block;
+    &::after {
+      content: '';
+      border-right: 2px solid $driftwood;
+      border-top: 2px solid $driftwood;
+      
+      // Positioning and stuff
+      display: block;
+      height: 20px;
+      position: absolute;
+      top: 28px;
+      left: -8px;
+      width: 10px;
+      @include prefix(animation, check-in .2s);
+      @include prefix(animation-delay, 0s);
+      width: 20px;
+      height: 10px;
+      @include transform-origin(right, top);
+      @include transform(rotate(180deg + -45deg));
+    }
+  }
+}
+
+@include keyframes(check-in) {
+  0% {
+    height: 0px;
+    width: 0px;
+    left: 13px;
+  }
+  40% {
+    height: 10px;
+    width: 0px;
+    left: 13px;
+  }
+  100% {
+    height: 10px;
+    width: 20px;
+    left: -8px;
+  }
+}
+
+@include keyframes(will-attend-circle) {
+  0% {
+    width: 130px;
+    border-radius: 0%;
+    @include calc(left, '50% - 68px');
+  }
+  20% {
+    width: 145px;
+    border-radius: 20%;
+  }
+  100% {
+    width: 37px;
+    border-radius: 50%;
+    @include calc(left, '50%');
   }
 }
 
@@ -308,6 +396,28 @@ html, body {
   100% {
     opacity: 1;
     -webkit-transform: translateY(0px);
+  }
+}
+
+@include keyframes(actions-in) {
+  0%{
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+    top: 49.5%;
+  }
+}
+
+@include keyframes(info-out) {
+  0%{
+    opacity: 1;
+    top: 49.5%;
+  }
+  100% {
+    opacity: 0;
+    top: 60%;
   }
 }
 
