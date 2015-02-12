@@ -64,7 +64,6 @@ html, body {
     @include prefix(animation-fill-mode, forwards);
   }
   &.close {
-    -webkit-animation-direction: reverse;
     $duration: .35s;
     display: block;
     $bezier: cubic-bezier(0.86, 0, 0.07, 1);
