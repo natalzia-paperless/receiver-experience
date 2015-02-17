@@ -1,0 +1,1660 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, ../../src/styles/lib/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, ../../src/styles/lib/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, ../../src/styles/lib/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, ../../src/styles/lib/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, ../../src/styles/lib/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 77, ../../src/styles/lib/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, ../../src/styles/lib/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 97, ../../src/styles/lib/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 109, ../../src/styles/lib/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 117, ../../src/styles/lib/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 126, ../../src/styles/lib/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 135, ../../src/styles/lib/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 144, ../../src/styles/lib/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 153, ../../src/styles/lib/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 161, ../../src/styles/lib/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 169, ../../src/styles/lib/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 173, ../../src/styles/lib/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 184, ../../src/styles/lib/_normalize.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 192, ../../src/styles/lib/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 203, ../../src/styles/lib/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 211, ../../src/styles/lib/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, ../../src/styles/lib/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, ../../src/styles/lib/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, ../../src/styles/lib/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, ../../src/styles/lib/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, ../../src/styles/lib/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, ../../src/styles/lib/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, ../../src/styles/lib/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, ../../src/styles/lib/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, ../../src/styles/lib/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, ../../src/styles/lib/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, ../../src/styles/lib/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 357, ../../src/styles/lib/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 370, ../../src/styles/lib/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 379, ../../src/styles/lib/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 390, ../../src/styles/lib/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 399, ../../src/styles/lib/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 408, ../../src/styles/lib/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 419, ../../src/styles/lib/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 424, ../../src/styles/lib/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/* Keyframe mixin from https://gist.github.com/ericam/1607696 */
+/* line 9, ../../src/styles/lib/_colors.scss */
+.red {
+  color: #7a1026 !important;
+}
+
+@font-face {
+  font-family: "Adobe Garamond Regular";
+  src: url("../webfonts/AdobeGaramondW08/AdobeGaramond-Regular.eot?#iefix");
+  src: url("../webfonts/AdobeGaramondW08/AdobeGaramond-Regular.eot?#iefix") format("eot"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Regular.woff") format("woff"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Regular.ttf") format("truetype"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Regular.svg#825d51b9-cc7d-4f4d-ba2c-47ffd291aebd") format("svg");
+}
+@font-face {
+  font-family: "Adobe Garamond Italic";
+  src: url("../webfonts/AdobeGaramondW08/AdobeGaramond-Italic.eot?#iefix");
+  src: url("../webfonts/AdobeGaramondW08/AdobeGaramond-Italic.eot?#iefix") format("eot"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Italic.woff") format("woff"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Italic.ttf") format("truetype"), url("../webfonts/AdobeGaramondW08/AdobeGaramond-Italic.svg#f00e2b8d-55bd-4f31-b5ae-e6230f2c8481") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Roman";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Roman.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Roman.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Roman.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Roman.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Roman.svg#dHelveticaNeue-Roman") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Italic";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Italic.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Italic.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Italic.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Italic.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Italic.svg#HelveticaNeue-Italic") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Bold Italic";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Bold-Italic.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Bold-Italic.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold-Italic.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold-Italic.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Bold-Italic.svg#HelveticaNeue-Bold-Italic") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Light.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Light.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Light Italic";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Light-Italic.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Light-Italic.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light-Italic.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light-Italic.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Light-Italic.svg#HelveticaNeue-Light-Italic") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Medium.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Medium.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Medium Italic";
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Medium-Italic.eot?#iefix");
+  src: url("../webfonts/HelveticaNeue/HelveticaNeue-Medium-Italic.eot?#iefix") format("eot"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium-Italic.woff") format("woff"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium-Italic.ttf") format("truetype"), url("../webfonts/HelveticaNeue/HelveticaNeue-Medium-Italic.svg#HelveticaNeue-Medium-Italic") format("svg");
+}
+@font-face {
+  font-family: "Tribute Roman";
+  src: url("../webfonts/TributeRoman/TributeRoman-webfont.eot");
+  src: url("../webfonts/TributeRoman/TributeRoman-webfont.eot?#iefix") format("embedded-opentype"), url("../webfonts/TributeRoman/TributeRoman-webfont.woff") format("woff");
+}
+/* line 99, ../../src/styles/lib/_fonts.scss */
+.garamond {
+  font-family: "Adobe Garamond Regular", Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+
+/* line 103, ../../src/styles/lib/_fonts.scss */
+.garamond-italic {
+  font-family: "Adobe Garamond Italic", Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+
+/* line 107, ../../src/styles/lib/_fonts.scss */
+.helvetica-roman {
+  font-family: "Helvetica Neue Roman", Helvetica, Arial, sans-serif;
+}
+
+/* line 111, ../../src/styles/lib/_fonts.scss */
+.helvetica-italic {
+  font-family: "Helvetica Neue Italic", Helvetica, Arial, sans-serif;
+}
+
+/* line 115, ../../src/styles/lib/_fonts.scss */
+.helvetica-bold {
+  font-family: "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
+}
+
+/* line 119, ../../src/styles/lib/_fonts.scss */
+.helvetica-bold-italic {
+  font-family: "Helvetica Neue Bold Italic", Helvetica, Arial, sans-serif;
+}
+
+/* line 123, ../../src/styles/lib/_fonts.scss */
+.helvetica-light {
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+}
+
+/* line 127, ../../src/styles/lib/_fonts.scss */
+.helvetica-light-italic {
+  font-family: "Helvetica Neue Light Italic", Helvetica, Arial, sans-serif;
+}
+
+/* line 131, ../../src/styles/lib/_fonts.scss */
+.helvetica-medium {
+  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+
+/* line 135, ../../src/styles/lib/_fonts.scss */
+.helvetica-medium-italic {
+  font-family: "Helvetica Neue Medium Italic", Helvetica, Arial, sans-serif;
+}
+
+/* line 139, ../../src/styles/lib/_fonts.scss */
+.fancy-font {
+  font-family: "Tribute Roman", Georgia, serif;
+}
+
+/* line 7, ../../src/styles/main.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+/* line 10, ../../src/styles/main.scss */
+html *, body * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 11, ../../src/styles/main.scss */
+html.card-overlay, body.card-overlay {
+  overflow: hidden;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* line 20, ../../src/styles/main.scss */
+.loader {
+  font-size: 18px;
+  padding: 10px 0 40px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+/* line 27, ../../src/styles/main.scss */
+.loader:after {
+  background-color: #a38546;
+  content: " ";
+  display: block;
+  height: 6px;
+  margin: 0 auto;
+  width: 20px;
+  -webkit-animation: spin 0.75s linear infinite;
+  -moz-animation: spin 0.75s linear infinite;
+  -ms-animation: spin 0.75s linear infinite;
+  -o-animation: spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
+}
+/* line 36, ../../src/styles/main.scss */
+.loader.center-this {
+  top: 40%;
+}
+
+/* line 41, ../../src/styles/main.scss */
+.draggable-card-container {
+  background-color: #f0f0f0;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  opacity: 0;
+  -webkit-overflow-scrolling: touch;
+  /*.draggable-card {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 90%;
+    @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
+    &.scaled {
+      transform: scale(1.5);
+    }
+  }*/
+}
+/* line 54, ../../src/styles/main.scss */
+.draggable-card-container.no-scroll {
+  overflow-x: hidden;
+}
+/* line 57, ../../src/styles/main.scss */
+.draggable-card-container.open {
+  display: block;
+  -webkit-animation: fade-in 0.35s;
+  -moz-animation: fade-in 0.35s;
+  -ms-animation: fade-in 0.35s;
+  -o-animation: fade-in 0.35s;
+  animation: fade-in 0.35s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -ms-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+/* line 66, ../../src/styles/main.scss */
+.draggable-card-container.close {
+  -webkit-animation: fade-out 0.35s;
+  -moz-animation: fade-out 0.35s;
+  -ms-animation: fade-out 0.35s;
+  -o-animation: fade-out 0.35s;
+  animation: fade-out 0.35s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -ms-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+/* line 73, ../../src/styles/main.scss */
+.draggable-card-container .inner-container {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 190%;
+  height: 100%;
+  list-style-type: none;
+}
+/* line 82, ../../src/styles/main.scss */
+.draggable-card-container li {
+  display: block;
+  float: left;
+  padding-right: 1.5%;
+  width: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%) translateZ(0);
+  top: 50%;
+}
+/* line 90, ../../src/styles/main.scss */
+.draggable-card-container li img {
+  max-width: 100%;
+}
+/* line 92, ../../src/styles/main.scss */
+.draggable-card-container li img.scaled {
+  max-width: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+}
+/* line 101, ../../src/styles/main.scss */
+.draggable-card-container li:first-child {
+  padding-left: 3%;
+}
+/* line 104, ../../src/styles/main.scss */
+.draggable-card-container li:last-child {
+  padding-right: 3%;
+}
+
+/* line 121, ../../src/styles/main.scss */
+.none {
+  display: none !important;
+}
+
+/* line 125, ../../src/styles/main.scss */
+.card-holder {
+  background-color: #f0f0f0;
+  height: -webkit-calc(100% - 170px);
+  height: -moz-calc(100% - 170px);
+  height: -ms-calc(100% - 170px);
+  height: calc(100% - 170px);
+  position: relative;
+  width: 100%;
+  max-height: 485px;
+}
+/* line 131, ../../src/styles/main.scss */
+.card-holder .card-image-holder {
+  max-height: 90%;
+  left: 50%;
+  width: 70%;
+  position: absolute;
+  bottom: -10px;
+  opacity: 0;
+  z-index: 1;
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: -moz-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  -o-transition: -o-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+}
+/* line 141, ../../src/styles/main.scss */
+.card-holder .card-image-holder.animate-in {
+  -webkit-animation: card-in 0.75s;
+  -moz-animation: card-in 0.75s;
+  -ms-animation: card-in 0.75s;
+  -o-animation: card-in 0.75s;
+  animation: card-in 0.75s;
+  -webkit-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  -moz-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  -o-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  opacity: 1;
+}
+/* line 148, ../../src/styles/main.scss */
+.card-holder .card-image-holder.is-in {
+  opacity: 1;
+  -webkit-transform: translateY(-50%, 0);
+  -moz-transform: translateY(-50%, 0);
+  -ms-transform: translateY(-50%, 0);
+  -o-transform: translateY(-50%, 0);
+  transform: translateY(-50%, 0);
+}
+/* line 152, ../../src/styles/main.scss */
+.card-holder .card-image-holder.grow-pls {
+  -moz-transform: translate(-50%, 0) scale(1.3);
+  -ms-transform: translate(-50%, 0) scale(1.3);
+  -webkit-transform: translate(-50%, 0) scale(1.3);
+  transform: translate(-50%, 0) scale(1.3);
+  bottom: -12%;
+  -moz-transition: -moz-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  -o-transition: -o-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+  transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
+}
+/* line 156, ../../src/styles/main.scss */
+.card-holder .card-image-holder.grow-pls .envelope {
+  left: -100%;
+  -moz-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+/* line 162, ../../src/styles/main.scss */
+.card-holder img {
+  max-height: 100%;
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* line 169, ../../src/styles/main.scss */
+.card-holder img.envelope {
+  position: absolute;
+  left: 18%;
+  top: 44%;
+  opacity: 0;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-transform-origin: -80% 90%;
+  -moz-transform-origin: -80% 90%;
+  -ms-transform-origin: -80% 90%;
+  -o-transform-origin: -80% 90%;
+  transform-origin: -80% 90%;
+  -webkit-transform: rotate(-42deg);
+  -moz-transform: rotate(-42deg);
+  -ms-transform: rotate(-42deg);
+  -o-transform: rotate(-42deg);
+  transform: rotate(-42deg);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
+}
+/* line 180, ../../src/styles/main.scss */
+.card-holder img.envelope.animate-in {
+  -webkit-animation: fade-in 0.35s;
+  -moz-animation: fade-in 0.35s;
+  -ms-animation: fade-in 0.35s;
+  -o-animation: fade-in 0.35s;
+  animation: fade-in 0.35s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -ms-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.6s;
+  -moz-animation-delay: 1.6s;
+  -ms-animation-delay: 1.6s;
+  -o-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+/* line 193, ../../src/styles/main.scss */
+.event-info {
+  opacity: 0;
+  position: relative;
+}
+/* line 196, ../../src/styles/main.scss */
+.event-info.animate-in {
+  -webkit-animation: info-in 0.35s;
+  -moz-animation: info-in 0.35s;
+  -ms-animation: info-in 0.35s;
+  -o-animation: info-in 0.35s;
+  animation: info-in 0.35s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.85s;
+  -moz-animation-delay: 0.85s;
+  -ms-animation-delay: 0.85s;
+  -o-animation-delay: 0.85s;
+  animation-delay: 0.85s;
+}
+
+/* line 205, ../../src/styles/main.scss */
+.center-this {
+  left: 50%;
+  top: 50%;
+  position: relative;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 210, ../../src/styles/main.scss */
+.center-this.loader {
+  position: absolute;
+}
+
+/* line 215, ../../src/styles/main.scss */
+.subhead {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* line 220, ../../src/styles/main.scss */
+.event-host {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* line 225, ../../src/styles/main.scss */
+.event-name {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+/* line 230, ../../src/styles/main.scss */
+.actions-container {
+  background-color: #fff;
+  height: 180px;
+  text-align: center;
+  padding: 50px 0 0;
+  position: relative;
+  width: 100%;
+  top: -15px;
+}
+
+/* line 240, ../../src/styles/main.scss */
+.content-container {
+  height: 100%;
+  min-height: 560px;
+  width: 100%;
+}
+
+/* line 246, ../../src/styles/main.scss */
+.event-details {
+  font-size: 14px;
+  text-align: center;
+  padding: 25px 0;
+  position: relative;
+  margin-top: -15px;
+}
+
+/* line 254, ../../src/styles/main.scss */
+.placeholder-container {
+  padding: 0 10px;
+}
+
+/* line 258, ../../src/styles/main.scss */
+.placeholder-box {
+  background-color: #eee;
+  border: 1px solid #DEDEDE;
+  margin: 10px 0;
+  height: 100px;
+}
+
+/* line 265, ../../src/styles/main.scss */
+.action {
+  background-color: #ffffff;
+  font-size: 12px;
+  color: #a38546;
+  margin-top: 15px;
+  padding: 10px 0;
+  position: absolute;
+  opacity: 0;
+  border: 1px solid #a38546;
+  width: 130px;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 276, ../../src/styles/main.scss */
+.action.animate-in {
+  -webkit-animation: actions-in 0.35s;
+  -moz-animation: actions-in 0.35s;
+  -ms-animation: actions-in 0.35s;
+  -o-animation: actions-in 0.35s;
+  animation: actions-in 0.35s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+/* line 281, ../../src/styles/main.scss */
+.action.animate-in:first-child {
+  left: -webkit-calc(50% - 68px);
+  left: -moz-calc(50% - 68px);
+  left: -ms-calc(50% - 68px);
+  left: calc(50% - 68px);
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 285, ../../src/styles/main.scss */
+.action.animate-in:last-child {
+  left: -webkit-calc(50% + 67px);
+  left: -moz-calc(50% + 67px);
+  left: -ms-calc(50% + 67px);
+  left: calc(50% + 67px);
+  -webkit-animation-delay: 1.15s;
+  -moz-animation-delay: 1.15s;
+  -ms-animation-delay: 1.15s;
+  -o-animation-delay: 1.15s;
+  animation-delay: 1.15s;
+}
+/* line 290, ../../src/styles/main.scss */
+.action.will-attend.is-attending {
+  height: 37px;
+  opacity: 1;
+  top: 50%;
+  padding: 0;
+  -webkit-animation: will-attend-circle 0.55s;
+  -moz-animation: will-attend-circle 0.55s;
+  -ms-animation: will-attend-circle 0.55s;
+  -o-animation: will-attend-circle 0.55s;
+  animation: will-attend-circle 0.55s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  -moz-transform: -50%;
+  -webkit-transform: -50%;
+  transform: -50%;
+}
+/* line 301, ../../src/styles/main.scss */
+.action.will-not-attend.is-attending {
+  -webkit-animation: info-out 0.35s;
+  -moz-animation: info-out 0.35s;
+  -ms-animation: info-out 0.35s;
+  -o-animation: info-out 0.35s;
+  animation: info-out 0.35s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+/* line 309, ../../src/styles/main.scss */
+.attending-actions {
+  position: relative;
+  min-height: 52px;
+}
+
+/* line 314, ../../src/styles/main.scss */
+.none {
+  display: none;
+}
+
+/* line 318, ../../src/styles/main.scss */
+.attending-check {
+  display: none;
+  position: relative;
+  width: 37px;
+  height: 37px;
+}
+/* line 323, ../../src/styles/main.scss */
+.attending-check.enter {
+  display: block;
+}
+/* line 325, ../../src/styles/main.scss */
+.attending-check.enter::after {
+  content: '';
+  border-right: 2px solid #a38546;
+  border-top: 2px solid #a38546;
+  display: block;
+  height: 20px;
+  position: absolute;
+  top: 28px;
+  left: -8px;
+  width: 10px;
+  -webkit-animation: check-in 0.2s;
+  -moz-animation: check-in 0.2s;
+  -ms-animation: check-in 0.2s;
+  -o-animation: check-in 0.2s;
+  animation: check-in 0.2s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  width: 20px;
+  height: 10px;
+  -moz-transform-origin: right top;
+  -ms-transform-origin: right top;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+@-webkit-keyframes check-in {
+  0% {
+    height: 0px;
+    width: 0px;
+    left: 13px;
+  }
+  40% {
+    height: 10px;
+    width: 0px;
+    left: 13px;
+  }
+  100% {
+    height: 10px;
+    width: 20px;
+    left: -8px;
+  }
+}
+@-moz-keyframes check-in {
+  0% {
+    height: 0px;
+    width: 0px;
+    left: 13px;
+  }
+  40% {
+    height: 10px;
+    width: 0px;
+    left: 13px;
+  }
+  100% {
+    height: 10px;
+    width: 20px;
+    left: -8px;
+  }
+}
+@-ms-keyframes check-in {
+  0% {
+    height: 0px;
+    width: 0px;
+    left: 13px;
+  }
+  40% {
+    height: 10px;
+    width: 0px;
+    left: 13px;
+  }
+  100% {
+    height: 10px;
+    width: 20px;
+    left: -8px;
+  }
+}
+@keyframes check-in {
+  0% {
+    height: 0px;
+    width: 0px;
+    left: 13px;
+  }
+  40% {
+    height: 10px;
+    width: 0px;
+    left: 13px;
+  }
+  100% {
+    height: 10px;
+    width: 20px;
+    left: -8px;
+  }
+}
+@-webkit-keyframes will-attend-circle {
+  0% {
+    width: 130px;
+    border-radius: 0%;
+    left: -webkit-calc(50% - 68px);
+    left: -moz-calc(50% - 68px);
+    left: -ms-calc(50% - 68px);
+    left: calc(50% - 68px);
+  }
+  20% {
+    width: 145px;
+    border-radius: 20%;
+  }
+  100% {
+    width: 37px;
+    border-radius: 50%;
+    left: -webkit-calc(50%);
+    left: -moz-calc(50%);
+    left: -ms-calc(50%);
+    left: calc(50%);
+  }
+}
+@-moz-keyframes will-attend-circle {
+  0% {
+    width: 130px;
+    border-radius: 0%;
+    left: -webkit-calc(50% - 68px);
+    left: -moz-calc(50% - 68px);
+    left: -ms-calc(50% - 68px);
+    left: calc(50% - 68px);
+  }
+  20% {
+    width: 145px;
+    border-radius: 20%;
+  }
+  100% {
+    width: 37px;
+    border-radius: 50%;
+    left: -webkit-calc(50%);
+    left: -moz-calc(50%);
+    left: -ms-calc(50%);
+    left: calc(50%);
+  }
+}
+@-ms-keyframes will-attend-circle {
+  0% {
+    width: 130px;
+    border-radius: 0%;
+    left: -webkit-calc(50% - 68px);
+    left: -moz-calc(50% - 68px);
+    left: -ms-calc(50% - 68px);
+    left: calc(50% - 68px);
+  }
+  20% {
+    width: 145px;
+    border-radius: 20%;
+  }
+  100% {
+    width: 37px;
+    border-radius: 50%;
+    left: -webkit-calc(50%);
+    left: -moz-calc(50%);
+    left: -ms-calc(50%);
+    left: calc(50%);
+  }
+}
+@keyframes will-attend-circle {
+  0% {
+    width: 130px;
+    border-radius: 0%;
+    left: -webkit-calc(50% - 68px);
+    left: -moz-calc(50% - 68px);
+    left: -ms-calc(50% - 68px);
+    left: calc(50% - 68px);
+  }
+  20% {
+    width: 145px;
+    border-radius: 20%;
+  }
+  100% {
+    width: 37px;
+    border-radius: 50%;
+    left: -webkit-calc(50%);
+    left: -moz-calc(50%);
+    left: -ms-calc(50%);
+    left: calc(50%);
+  }
+}
+/* line 382, ../../src/styles/main.scss */
+.details-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+/* line 389, ../../src/styles/main.scss */
+.details-overlay.open {
+  display: block;
+  -webkit-animation: fade-in 0.3s;
+  -moz-animation: fade-in 0.3s;
+  -ms-animation: fade-in 0.3s;
+  -o-animation: fade-in 0.3s;
+  animation: fade-in 0.3s;
+  opacity: 1;
+}
+/* line 394, ../../src/styles/main.scss */
+.details-overlay.open .option {
+  -webkit-animation: info-in 0.15s;
+  -moz-animation: info-in 0.15s;
+  -ms-animation: info-in 0.15s;
+  -o-animation: info-in 0.15s;
+  animation: info-in 0.15s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  -moz-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  -ms-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  -o-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 399, ../../src/styles/main.scss */
+.details-overlay.open .option:nth-child(2) {
+  -webkit-animation-delay: 0.25s;
+  -moz-animation-delay: 0.25s;
+  -ms-animation-delay: 0.25s;
+  -o-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+/* line 402, ../../src/styles/main.scss */
+.details-overlay.open .option:nth-child(3) {
+  -webkit-animation-delay: 0.35s;
+  -moz-animation-delay: 0.35s;
+  -ms-animation-delay: 0.35s;
+  -o-animation-delay: 0.35s;
+  animation-delay: 0.35s;
+}
+
+/* line 409, ../../src/styles/main.scss */
+.overlay-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* line 415, ../../src/styles/main.scss */
+.details-options {
+  background-color: white;
+  border: 1px solid #eee;
+  width: 210px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -105px;
+  margin-top: -100px;
+}
+/* line 424, ../../src/styles/main.scss */
+.details-options .header {
+  color: #aaa;
+  padding: 20px;
+  border-bottom: 1px solid #aaa;
+}
+/* line 429, ../../src/styles/main.scss */
+.details-options .close-x {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  color: #aaa;
+  -webkit-transform: scaleX(1.3);
+  font-size: 24px;
+}
+/* line 440, ../../src/styles/main.scss */
+.details-options .option, .details-options .option:visited, .details-options .option.active {
+  color: #111;
+  display: block;
+  padding: 10px 20px;
+  opacity: 0;
+  text-decoration: none;
+}
+/* line 446, ../../src/styles/main.scss */
+.details-options .option.hovered, .details-options .option:visited.hovered, .details-options .option.active.hovered {
+  background-color: #eee;
+}
+/* line 449, ../../src/styles/main.scss */
+.details-options .option:first-child, .details-options .option:visited:first-child, .details-options .option.active:first-child {
+  margin-top: 10px;
+}
+/* line 452, ../../src/styles/main.scss */
+.details-options .option:last-child, .details-options .option:visited:last-child, .details-options .option.active:last-child {
+  margin-bottom: 10px;
+}
+
+@-webkit-keyframes card-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%, -50%);
+    -moz-transform: translateY(-50%, -50%);
+    -ms-transform: translateY(-50%, -50%);
+    -o-transform: translateY(-50%, -50%);
+    transform: translateY(-50%, -50%);
+  }
+}
+@-moz-keyframes card-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%, -50%);
+    -moz-transform: translateY(-50%, -50%);
+    -ms-transform: translateY(-50%, -50%);
+    -o-transform: translateY(-50%, -50%);
+    transform: translateY(-50%, -50%);
+  }
+}
+@-ms-keyframes card-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%, -50%);
+    -moz-transform: translateY(-50%, -50%);
+    -ms-transform: translateY(-50%, -50%);
+    -o-transform: translateY(-50%, -50%);
+    transform: translateY(-50%, -50%);
+  }
+}
+@keyframes card-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%, -50%);
+    -moz-transform: translateY(-50%, -50%);
+    -ms-transform: translateY(-50%, -50%);
+    -o-transform: translateY(-50%, -50%);
+    transform: translateY(-50%, -50%);
+  }
+}
+@-webkit-keyframes info-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@-moz-keyframes info-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@-ms-keyframes info-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@keyframes info-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@-webkit-keyframes actions-in {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+    top: 49.5%;
+  }
+}
+@-moz-keyframes actions-in {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+    top: 49.5%;
+  }
+}
+@-ms-keyframes actions-in {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+    top: 49.5%;
+  }
+}
+@keyframes actions-in {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+    top: 49.5%;
+  }
+}
+@-webkit-keyframes info-out {
+  0% {
+    opacity: 1;
+    top: 49.5%;
+  }
+  100% {
+    opacity: 0;
+    top: 60%;
+  }
+}
+@-moz-keyframes info-out {
+  0% {
+    opacity: 1;
+    top: 49.5%;
+  }
+  100% {
+    opacity: 0;
+    top: 60%;
+  }
+}
+@-ms-keyframes info-out {
+  0% {
+    opacity: 1;
+    top: 49.5%;
+  }
+  100% {
+    opacity: 0;
+    top: 60%;
+  }
+}
+@keyframes info-out {
+  0% {
+    opacity: 1;
+    top: 49.5%;
+  }
+  100% {
+    opacity: 0;
+    top: 60%;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
