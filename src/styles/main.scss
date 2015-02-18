@@ -143,16 +143,6 @@ html, body {
     bottom: 10px;
     z-index: 1;
     @include transform(translate(-50%, 0));
-    @include transition(transform .6s cubic-bezier(0.86, 0, 0.07, 1), bottom .6s);
-    &.grow-pls {
-      @include transform(translate(-50%, 0) scale(1.3));
-      bottom: -12%;
-      @include transition(transform .6s cubic-bezier(0.86, 0, 0.07, 1), bottom .6s);
-      .envelope {
-        left: -100%;
-        @include transition(left .4s cubic-bezier(0.86, 0, 0.07, 1));
-      }
-    }
   }
   img {
     max-height: 100%;
@@ -165,6 +155,12 @@ html, body {
     display: inline;
     @include transform(translate(-53%, 0));
     @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
+    @include transition(transform .6s cubic-bezier(0.86, 0, 0.07, 1), bottom .6s);
+    &.grow-pls {
+      @include transform(translate(-50%, 0) scale(1.3));
+      bottom: -12%;
+      @include transition(transform .6s cubic-bezier(0.86, 0, 0.07, 1), bottom .6s);
+    }
     &.envelope {
       position: absolute;
       z-index: -1;
@@ -195,12 +191,21 @@ html, body {
 .event-info {
   opacity: 0;
   position:relative;
+  padding-bottom: 15px;
   &.animate-in {
     $duration: .35s;
     @include prefix(animation, info-in $duration);
     //@include prefix(animation-timing-function, ease-in);
     @include prefix(animation-fill-mode, forwards);
-    @include prefix(animation-delay, .85s);
+    //@include prefix(animation-delay, .85s);
+  }
+  &.is-in {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  &.remove-rsvp {
+    @include prefix(animation, event-info-up .35s);
+    @include transform(translateY(-15px));
   }
 }
 
@@ -217,6 +222,17 @@ html, body {
 .subhead {
   text-transform: uppercase;
   font-size: 12px;
+  position: relative;
+  opacity: 1;
+  @include transform(translate(0%, 0%));
+  &.is-attending {
+    opacity: 0;
+    @include transform(translateY(20px));
+    @include prefix(animation, down-and-out .35s);
+  }
+  &.close {
+    position: absolute;
+  }
 }
 
 .event-host {
@@ -225,18 +241,51 @@ html, body {
 }
 
 .event-name {
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 5px;
+}
+
+.status-container {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  &.enter {
+    opacity: 1;
+    $duration: .35s;
+    @include prefix(animation, fade-in $duration);
+  }
+  &.is-in {
+    position: relative;
+  }
+}
+.status-border {
+  border-top: 1px solid $alto;
+  width: 60%;
+  height: 1px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.attending-status {
+  font-size: 18px;
+}
+
+.change-response {
+  font-size: 12px;
+  color: $driftwood;
 }
 
 .actions-container {
   background-color: #fff;
-  height: 180px;
   text-align: center;
   padding: 50px 0 25px;
   position: relative;
   width: 100%;
   top: -15px;
+  &.less-padding {
+    padding: 25px 0 15px;
+    @include transition(padding .35s);
+  }
 }
 
 .content-container {
@@ -263,16 +312,15 @@ html, body {
 }
 
 .action {
-  background-color: $white;
   font-size: 12px;
   color: $driftwood;
-  margin-top: 15px;
+  //margin-top: 15px;
   padding: 10px 0;
   position: absolute;
   opacity: 0;
   border: 1px solid $driftwood;
   width: 130px;
-  @include transform(translate(-50%, -50%));
+  @include transform(translate(-50%, -49%));
   &.animate-in {
     $duration: .25s;
     @include prefix(animation, actions-in $duration);
@@ -280,11 +328,11 @@ html, body {
     
     &:first-child {
       @include calc(left, '50% - 68px');
-      @include prefix(animation-delay, 1s);
+      @include prefix(animation-delay, .15s);
     }
     &:last-child {
       @include calc(left, '50% + 67px');
-      @include prefix(animation-delay, 1.15s);
+      @include prefix(animation-delay, .3s);
     }
   }
   &.will-attend.is-attending {
@@ -296,7 +344,7 @@ html, body {
     @include prefix(animation, will-attend-circle $checkbox-duration);
     @include prefix(animation-fill-mode, forwards);
     @include prefix(animation-delay, 0s);
-    @include transform(-50%, -50%);
+    @include transform(translate(-50%, -50%));
   }
   &.will-not-attend.is-attending {
     $checkbox-duration: .35s;
@@ -309,6 +357,11 @@ html, body {
 .attending-actions {
   position: relative;
   min-height: 52px;
+  opacity: 1;
+  &.remove {
+    opacity: 0;
+    @include prefix(animation, fade-out .35s);
+  }
 }
 
 .none {
@@ -427,5 +480,25 @@ html, body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@include keyframes(down-and-out) {
+  0% {
+    opacity: 1;
+    @include transform(translateY(0px));
+  }
+  100% {
+    opacity: 0;
+    @include transform(translateY(10px));
+  }
+}
+
+@include keyframes(event-info-up) {
+  0% {
+    @include transform(translateY(0px));
+  }
+  100% {
+    @include transform(translateY(-15px));
   }
 }

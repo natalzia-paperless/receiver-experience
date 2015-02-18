@@ -24,15 +24,11 @@ $(function(){
   }
 
   $('.will-attend').on('click', function() {
-    $('.will-not-attend').addClass('is-attending');
-    setTimeout(function() {
-      $('.will-attend .text').addClass('none');
-      $('.will-attend').addClass('is-attending');
-      
-      setTimeout(function() {
-        $('.attending-check').addClass('enter');
-      }, 600);
-    }, 350);
+    didAttend();
+  });
+
+  $('.change-response').on('click', function() {
+    changeResponse();
   });
 
   $('.js-card-image').on('click', function() {
@@ -161,6 +157,57 @@ $(function(){
     if (window.location.hash.indexOf('open') !== -1) {
       openCardOverlay();
     }
+  }
+
+  function didAttend() {
+    // Fade out will not attend and header
+    $('.will-not-attend').addClass('is-attending');
+    $('.please-rsvp-header').addClass('is-attending');
+    setTimeout(function() {
+      // Transition will attend button into checkbox position
+      $('.will-attend .text').addClass('none');
+      $('.will-attend').addClass('is-attending');
+      
+      setTimeout(function() {
+        // Bring the checkmark in
+        $('.attending-check').addClass('enter');
+        setTimeout(function() {
+          //Transition the checkmark out and bring in the 'change response dialog'
+          $('.status-container').removeClass('none').addClass('enter');
+          $('.attending-actions').addClass('remove');
+          $('.actions-container').addClass('less-padding');
+          setTimeout(function(){
+            $('.status-container').addClass('is-in');
+            $('.attending-actions').addClass('none');
+          }, 350);
+        }, 650);
+      }, 600);
+    }, 350);
+  }
+
+  function changeResponse() {
+    $('.status-container').removeClass('is-in');
+    $('.attending-actions').removeClass('none');
+
+    setTimeout(function(){
+      $('.status-container').addClass('none').removeClass('enter');
+      $('.attending-actions').removeClass('remove');
+      $('.actions-container').removeClass('less-padding');
+
+      setTimeout(function() {
+        $('.attending-check').removeClass('enter');
+
+        setTimeout(function() {
+          $('.will-attend .text').removeClass('none');
+          $('.will-attend').removeClass('is-attending');
+
+          setTimeout(function() {
+            $('.will-not-attend').removeClass('is-attending');
+            $('.please-rsvp-header').removeClass('is-attending');
+          }, 350);
+        }, 600);
+      }, 250);
+    }, 350);
   }
 
   window.onpopstate = function() {

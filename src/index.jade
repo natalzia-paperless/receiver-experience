@@ -28,19 +28,24 @@ html(lang="en")
           img.insert.space-img(alt="", src="img/insert2.png")
           img.envelope(alt="", src="img/envelope.png")
       .actions-container
-        .center-this
-          .event-info
-            .subhead.helvetica-light.
-              Please RSVP for
-            .event-name.garamond-italic.
-              Huzzah!
-            .event-host.helvetica-light Hosted by: Stampy and Envelette
-          .attending-actions
-            .will-attend.action.helvetica-light
-              .text.
-                Will Attend
-              .attending-check
-            .will-not-attend.action.helvetica-light Will Not Attend
+        .event-info
+          .subhead.please-rsvp-header.helvetica-light.
+            Please RSVP for
+          .event-name.garamond-italic.
+            Huzzah!
+          .event-host.helvetica-light Hosted by: Stampy and Envelette
+        .status-container.none
+          .status-border
+          .attending-status.garamond-italic.
+            You are attending.
+          .change-response.helvetica-light.
+            Change response
+        .attending-actions
+          .will-attend.action.helvetica-light
+            .text.
+              Will Attend
+            .attending-check
+          .will-not-attend.action.helvetica-light Will Not Attend
       .event-details.helvetica-light
         .event-date.
           Saturday, 12th Feb, 2015
