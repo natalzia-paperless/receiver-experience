@@ -142,42 +142,12 @@ $(function(){
       $dragCardContainer.removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
-      $dragCardContainer.scrollLeft(screenWidth * .87);
+      $dragCardContainer.scrollLeft(screenWidth * .843);
     }, 300);
 
-    //set up card for movement
-    /*$('html, body').addClass('card-overlay');
-    $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
-    $('.draggable-card-container').addClass('open');
-
-    setTimeout(function() {
-      var top = $('.js-card-image').offset().top,
-          left = $('.js-card-image').offset().left + 6;
-      $card.addClass('show').css({
-        top: top,
-        left: left,
-        width: $('.js-card-image').width() - 12
-      });
-      $('.card-holder').addClass('none');
-      mainOptions.cardInitialPosition = {
-        top: top,
-        left: left
-      }
-    },750);*/
   }
 
   function closeCardOverlay() {
-    /*$card.animate({
-      top: mainOptions.cardInitialPosition.top,
-      left: mainOptions.cardInitialPosition.left
-    }, 250, function() {
-      $('html, body').removeClass('card-overlay');
-      $('.js-card-image').removeClass('grow-pls');
-      $('.draggable-card-container').removeClass('open');
-      $('.card-holder').removeClass('none');
-      $card.removeClass('show')
-    });*/
-
     $dragCardContainer.removeClass('open').addClass('close');
 
     setTimeout(function() {
