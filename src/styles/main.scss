@@ -43,47 +43,48 @@ html, body {
   max-height: 485px;
   .card-image-holder {
     max-height: 90%;
+    height: 100%;
     left: 50%;
-    width: 75%;
+    width: 95%;
     position: absolute;
-    top: 57%;
-    opacity: 0;
+    bottom: 10px;
     z-index: 1;
-    @include transform(translate(-50%, -50%));
-    &.animate-in {
-      $duration: .75s;
-      $bezier: cubic-bezier(0.86, 0, 0.07, 1);
-      @include prefix(animation, card-in $duration);
-      @include prefix(animation-timing-function, $bezier);
-      opacity: 1;
-    }
+    @include transform(translate(-50%, 0));
   }
   img {
     max-height: 100%;
-    position:relative;
-    max-width: 100%;
+    position:absolute;
+    max-width: 70%;
+    width: 70%;
+    left: 50%;
+    bottom: -10px;
     margin: 0 auto;
-    display: block;
+    display: inline;
+    @include transform(translate(-53%, 0));
     @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
     &.envelope {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      opacity: 0;
-      @include transform(translate(-50%, -50%));
       z-index: -1;
-      @include prefix(transform-origin, -80% 90%);
-      @include prefix(transform, rotate(-42deg));
       @include box-shadow(none);
-      &.animate-in {
-        $duration: .35s;
-        $bezier: cubic-bezier(0.86, 0, 0.07, 1);
-        @include prefix(animation, fade-in $duration);
-        //@include prefix(animation-timing-function, $bezier);
-        @include prefix(animation-timing-function, ease-in);
-        @include prefix(animation-fill-mode, forwards);
-        @include prefix(animation-delay, 1.6s);
+    }
+    @for $i from 2 through 5 {
+      &:nth-child(#{$i}) {
+        @include calc(left, '50% + #{($i - 1)*15}px');
+        z-index: #{$i*-1};
+        bottom: #{($i - 2)*10}px;
+        width: #{70 - ($i * 2)}#{"%"};
       }
+    }
+    &.space-img {
+      max-height: 70%;
+    }
+    &.envelope {
+      width: 75%;
+      max-width: 75%;
+      left: -webkit-calc(50% + 45px);
+      left: -moz-calc(50% + 45px);
+      left: -ms-calc(50% + 45px);
+      left: calc(50% + 30px);
     }
   }
 }
@@ -272,17 +273,6 @@ html, body {
     width: 37px;
     border-radius: 50%;
     @include calc(left, '50%');
-  }
-}
-
-@include keyframes(card-in) {
-  0% {
-    opacity: 0;
-    @include prefix(transform, translate(-50%, -100%));
-  }
-  100% {
-    opacity: 1;
-    @include prefix(transform, translateY(-50%, -50%));
   }
 }
 
