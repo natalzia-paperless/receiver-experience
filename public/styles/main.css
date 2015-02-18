@@ -723,13 +723,17 @@ html.card-overlay, body.card-overlay {
   top: 50%;
 }
 /* line 92, ../../src/styles/main.scss */
+.draggable-card-container li.hammer-me {
+  z-index: 1;
+}
+/* line 95, ../../src/styles/main.scss */
 .draggable-card-container li img {
   -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   max-width: 100%;
 }
-/* line 95, ../../src/styles/main.scss */
+/* line 98, ../../src/styles/main.scss */
 .draggable-card-container li img.scaled {
   max-width: none;
   position: absolute;
@@ -737,23 +741,23 @@ html.card-overlay, body.card-overlay {
   left: 50%;
   width: 200%;
 }
-/* line 103, ../../src/styles/main.scss */
+/* line 106, ../../src/styles/main.scss */
 .draggable-card-container li img.scrolling-envelope {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 107, ../../src/styles/main.scss */
+/* line 110, ../../src/styles/main.scss */
 .draggable-card-container li:first-child {
   padding-left: 4.5%;
 }
 
-/* line 124, ../../src/styles/main.scss */
+/* line 127, ../../src/styles/main.scss */
 .none {
   display: none !important;
 }
 
-/* line 128, ../../src/styles/main.scss */
+/* line 131, ../../src/styles/main.scss */
 .card-holder {
   background-color: #f0f0f0;
   height: -webkit-calc(100% - 170px);
@@ -764,7 +768,7 @@ html.card-overlay, body.card-overlay {
   width: 100%;
   max-height: 485px;
 }
-/* line 134, ../../src/styles/main.scss */
+/* line 137, ../../src/styles/main.scss */
 .card-holder .card-image-holder {
   max-height: 90%;
   height: 100%;
@@ -782,7 +786,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
 }
-/* line 144, ../../src/styles/main.scss */
+/* line 147, ../../src/styles/main.scss */
 .card-holder .card-image-holder.grow-pls {
   -moz-transform: translate(-50%, 0) scale(1.3);
   -ms-transform: translate(-50%, 0) scale(1.3);
@@ -794,7 +798,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
 }
-/* line 148, ../../src/styles/main.scss */
+/* line 151, ../../src/styles/main.scss */
 .card-holder .card-image-holder.grow-pls .envelope {
   left: -100%;
   -moz-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
@@ -802,7 +806,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
-/* line 154, ../../src/styles/main.scss */
+/* line 157, ../../src/styles/main.scss */
 .card-holder img {
   max-height: 100%;
   position: absolute;
@@ -820,7 +824,7 @@ html.card-overlay, body.card-overlay {
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-/* line 165, ../../src/styles/main.scss */
+/* line 168, ../../src/styles/main.scss */
 .card-holder img.envelope {
   position: absolute;
   z-index: -1;
@@ -828,7 +832,7 @@ html.card-overlay, body.card-overlay {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 171, ../../src/styles/main.scss */
+/* line 174, ../../src/styles/main.scss */
 .card-holder img:nth-child(2) {
   left: -webkit-calc(50% + 15px);
   left: -moz-calc(50% + 15px);
@@ -838,7 +842,7 @@ html.card-overlay, body.card-overlay {
   bottom: 0px;
   width: 66%;
 }
-/* line 171, ../../src/styles/main.scss */
+/* line 174, ../../src/styles/main.scss */
 .card-holder img:nth-child(3) {
   left: -webkit-calc(50% + 30px);
   left: -moz-calc(50% + 30px);
@@ -848,7 +852,7 @@ html.card-overlay, body.card-overlay {
   bottom: 10px;
   width: 64%;
 }
-/* line 171, ../../src/styles/main.scss */
+/* line 174, ../../src/styles/main.scss */
 .card-holder img:nth-child(4) {
   left: -webkit-calc(50% + 45px);
   left: -moz-calc(50% + 45px);
@@ -858,7 +862,7 @@ html.card-overlay, body.card-overlay {
   bottom: 20px;
   width: 62%;
 }
-/* line 171, ../../src/styles/main.scss */
+/* line 174, ../../src/styles/main.scss */
 .card-holder img:nth-child(5) {
   left: -webkit-calc(50% + 60px);
   left: -moz-calc(50% + 60px);
@@ -868,11 +872,11 @@ html.card-overlay, body.card-overlay {
   bottom: 30px;
   width: 60%;
 }
-/* line 178, ../../src/styles/main.scss */
+/* line 181, ../../src/styles/main.scss */
 .card-holder img.space-img {
   max-height: 70%;
 }
-/* line 181, ../../src/styles/main.scss */
+/* line 184, ../../src/styles/main.scss */
 .card-holder img.envelope {
   width: 75%;
   max-width: 75%;
@@ -882,12 +886,12 @@ html.card-overlay, body.card-overlay {
   left: calc(50% + 30px);
 }
 
-/* line 192, ../../src/styles/main.scss */
+/* line 195, ../../src/styles/main.scss */
 .event-info {
   opacity: 0;
   position: relative;
 }
-/* line 195, ../../src/styles/main.scss */
+/* line 198, ../../src/styles/main.scss */
 .event-info.animate-in {
   -webkit-animation: info-in 0.35s;
   -moz-animation: info-in 0.35s;
@@ -906,7 +910,7 @@ html.card-overlay, body.card-overlay {
   animation-delay: 0.85s;
 }
 
-/* line 204, ../../src/styles/main.scss */
+/* line 207, ../../src/styles/main.scss */
 .center-this {
   left: 50%;
   top: 50%;
@@ -916,30 +920,30 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 209, ../../src/styles/main.scss */
+/* line 212, ../../src/styles/main.scss */
 .center-this.loader {
   position: absolute;
 }
 
-/* line 214, ../../src/styles/main.scss */
+/* line 217, ../../src/styles/main.scss */
 .subhead {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-/* line 219, ../../src/styles/main.scss */
+/* line 222, ../../src/styles/main.scss */
 .event-host {
   font-size: 12px;
   margin-top: 4px;
 }
 
-/* line 224, ../../src/styles/main.scss */
+/* line 227, ../../src/styles/main.scss */
 .event-name {
   font-size: 20px;
   margin-top: 5px;
 }
 
-/* line 229, ../../src/styles/main.scss */
+/* line 232, ../../src/styles/main.scss */
 .actions-container {
   background-color: #fff;
   height: 180px;
@@ -950,26 +954,26 @@ html.card-overlay, body.card-overlay {
   top: -15px;
 }
 
-/* line 239, ../../src/styles/main.scss */
+/* line 242, ../../src/styles/main.scss */
 .content-container {
   height: 100%;
   min-height: 560px;
   width: 100%;
 }
 
-/* line 245, ../../src/styles/main.scss */
+/* line 248, ../../src/styles/main.scss */
 .event-details {
   font-size: 14px;
   text-align: center;
   padding-bottom: 20px;
 }
 
-/* line 251, ../../src/styles/main.scss */
+/* line 254, ../../src/styles/main.scss */
 .placeholder-container {
   padding: 10px;
 }
 
-/* line 255, ../../src/styles/main.scss */
+/* line 258, ../../src/styles/main.scss */
 .placeholder-box {
   background-color: #eee;
   border: 1px solid #DEDEDE;
@@ -977,7 +981,7 @@ html.card-overlay, body.card-overlay {
   height: 100px;
 }
 
-/* line 262, ../../src/styles/main.scss */
+/* line 265, ../../src/styles/main.scss */
 .action {
   background-color: #ffffff;
   font-size: 12px;
@@ -993,7 +997,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 273, ../../src/styles/main.scss */
+/* line 276, ../../src/styles/main.scss */
 .action.animate-in {
   -webkit-animation: actions-in 0.25s;
   -moz-animation: actions-in 0.25s;
@@ -1006,7 +1010,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 278, ../../src/styles/main.scss */
+/* line 281, ../../src/styles/main.scss */
 .action.animate-in:first-child {
   left: -webkit-calc(50% - 68px);
   left: -moz-calc(50% - 68px);
@@ -1018,7 +1022,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-delay: 1s;
   animation-delay: 1s;
 }
-/* line 282, ../../src/styles/main.scss */
+/* line 285, ../../src/styles/main.scss */
 .action.animate-in:last-child {
   left: -webkit-calc(50% + 67px);
   left: -moz-calc(50% + 67px);
@@ -1030,7 +1034,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-delay: 1.15s;
   animation-delay: 1.15s;
 }
-/* line 287, ../../src/styles/main.scss */
+/* line 290, ../../src/styles/main.scss */
 .action.will-attend.is-attending {
   height: 37px;
   opacity: 1;
@@ -1055,7 +1059,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: -50%;
   transform: -50%;
 }
-/* line 298, ../../src/styles/main.scss */
+/* line 301, ../../src/styles/main.scss */
 .action.will-not-attend.is-attending {
   -webkit-animation: info-out 0.35s;
   -moz-animation: info-out 0.35s;
@@ -1074,29 +1078,29 @@ html.card-overlay, body.card-overlay {
   animation-delay: 0s;
 }
 
-/* line 306, ../../src/styles/main.scss */
+/* line 309, ../../src/styles/main.scss */
 .attending-actions {
   position: relative;
   min-height: 52px;
 }
 
-/* line 311, ../../src/styles/main.scss */
+/* line 314, ../../src/styles/main.scss */
 .none {
   display: none;
 }
 
-/* line 315, ../../src/styles/main.scss */
+/* line 318, ../../src/styles/main.scss */
 .attending-check {
   display: none;
   position: relative;
   width: 37px;
   height: 37px;
 }
-/* line 320, ../../src/styles/main.scss */
+/* line 323, ../../src/styles/main.scss */
 .attending-check.enter {
   display: block;
 }
-/* line 322, ../../src/styles/main.scss */
+/* line 325, ../../src/styles/main.scss */
 .attending-check.enter::after {
   content: '';
   border-right: 2px solid #a38546;

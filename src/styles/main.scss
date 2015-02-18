@@ -89,6 +89,9 @@ html, body {
     position: relative;
     -webkit-transform: translateY(-50%) translateZ(0);
     top: 50%;
+    &.hammer-me {
+      z-index: 1;
+    }
     img {
       @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
       max-width: 100%;
