@@ -1,6 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/*! animation-chain - v 0.1.0 -  2015-02-19 */
+var requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1e3/60)}}(),Chain=function(a,b){var c={ticks:[],init:function(a,b){c.ticks=[{cb:a,time:b}],requestAnimFrame(c.tick)},tick:function(a){c.startTime||(c.startTime=a);for(var b=0;b<c.ticks.length;b++){var d=c.ticks[b];if(a-c.startTime>=d.time&&(d.cb(),c.ticks.splice(0,1),0===c.ticks.length))return}requestAnimFrame(c.tick)},chainTo:function(a,b){var d=c.ticks[c.ticks.length-1];c.ticks.push({cb:a,time:b+d.time})}};return c.init(a,b),c};module.exports=Chain;
+},{}],2:[function(require,module,exports){
 $(function(){
   checkHash();
+
+  var chain = require('animation-chain');
 
   var mainOptions = {
     trackingMovement: false,
@@ -17,14 +22,14 @@ $(function(){
   var img = new Image();
   img.src = src;
   img.onload = function() {
-    setTimeout(function(){
+    chain(function(){
       $('.loader').animate({opacity:0}, function() {
         $(this).remove();
         $('.card-image-holder').addClass('animate-in');
         $('.event-info').addClass('animate-in');
         $('.action').addClass('animate-in');
         $('.envelope').addClass('animate-in');
-        setTimeout(function() {
+        chain(function() {
           //flip card
           $('.flippable').addClass('is-flipped');
         }, 2000);
@@ -79,7 +84,7 @@ $(function(){
       console.log('tap tap');
       zoomImage();
     }
-    setTimeout(function() {
+    chain(function() {
       if (mainOptions.numTouches === 1 && !mainOptions.trackingMovement) {
         var touch = mainOptions.lastTouchEvent;
         if (!touch) return;
@@ -135,7 +140,7 @@ $(function(){
     $('html, body').addClass('card-overlay');
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
 
-    setTimeout(function() {
+    chain(function() {
       $dragCardContainer.removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
@@ -147,7 +152,7 @@ $(function(){
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
     $('.draggable-card-container').addClass('open');
 
-    setTimeout(function() {
+    chain(function() {
       var top = $('.js-card-image').offset().top,
           left = $('.js-card-image').offset().left + 6;
       $card.addClass('show').css({
@@ -177,7 +182,7 @@ $(function(){
 
     $dragCardContainer.removeClass('open').addClass('close');
 
-    setTimeout(function() {
+    chain(function() {
       $('html, body').removeClass('card-overlay');
       $('.js-card-image').removeClass('grow-pls');
       $dragCardContainer.removeClass('close');
@@ -204,4 +209,4 @@ $(function(){
   }
 });
 
-},{}]},{},[1]);
+},{"animation-chain":1}]},{},[2]);

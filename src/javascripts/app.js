@@ -1,6 +1,8 @@
 $(function(){
   checkHash();
 
+  var chain = require('animation-chain');
+
   var mainOptions = {
     trackingMovement: false,
     lastTouchEvent: {},
@@ -16,14 +18,14 @@ $(function(){
   var img = new Image();
   img.src = src;
   img.onload = function() {
-    setTimeout(function(){
+    chain(function(){
       $('.loader').animate({opacity:0}, function() {
         $(this).remove();
         $('.card-image-holder').addClass('animate-in');
         $('.event-info').addClass('animate-in');
         $('.action').addClass('animate-in');
         $('.envelope').addClass('animate-in');
-        setTimeout(function() {
+        chain(function() {
           //flip card
           $('.flippable').addClass('is-flipped');
         }, 2000);
@@ -78,7 +80,7 @@ $(function(){
       console.log('tap tap');
       zoomImage();
     }
-    setTimeout(function() {
+    chain(function() {
       if (mainOptions.numTouches === 1 && !mainOptions.trackingMovement) {
         var touch = mainOptions.lastTouchEvent;
         if (!touch) return;
@@ -134,7 +136,7 @@ $(function(){
     $('html, body').addClass('card-overlay');
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
 
-    setTimeout(function() {
+    chain(function() {
       $dragCardContainer.removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
@@ -146,7 +148,7 @@ $(function(){
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
     $('.draggable-card-container').addClass('open');
 
-    setTimeout(function() {
+    chain(function() {
       var top = $('.js-card-image').offset().top,
           left = $('.js-card-image').offset().left + 6;
       $card.addClass('show').css({
@@ -176,7 +178,7 @@ $(function(){
 
     $dragCardContainer.removeClass('open').addClass('close');
 
-    setTimeout(function() {
+    chain(function() {
       $('html, body').removeClass('card-overlay');
       $('.js-card-image').removeClass('grow-pls');
       $dragCardContainer.removeClass('close');
