@@ -2,10 +2,10 @@
 /*! animation-chain - v 0.1.0 -  2015-02-19 */
 var requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1e3/60)}}(),Chain=function(a,b){var c={ticks:[],init:function(a,b){c.ticks=[{cb:a,time:b}],requestAnimFrame(c.tick)},tick:function(a){c.startTime||(c.startTime=a);for(var b=0;b<c.ticks.length;b++){var d=c.ticks[b];if(a-c.startTime>=d.time&&(d.cb(),c.ticks.splice(0,1),0===c.ticks.length))return}requestAnimFrame(c.tick)},chainTo:function(a,b){var d=c.ticks[c.ticks.length-1];c.ticks.push({cb:a,time:b+d.time})}};return c.init(a,b),c};module.exports=Chain;
 },{}],2:[function(require,module,exports){
+var chain = require('animation-chain');
+
 $(function(){
   checkHash();
-
-  var chain = require('animation-chain');
 
   var mainOptions = {
     trackingMovement: false,
@@ -36,6 +36,10 @@ $(function(){
       });
     }, 500);
   }
+
+  $('.js-flip-button').on('click', function() {
+    $('.flippable').toggleClass('is-flipped');
+  });
 
   $('.js-card-image').on('click', function() {
     window.history.pushState({cardOpen: true}, "", "#open");

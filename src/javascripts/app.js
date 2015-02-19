@@ -1,7 +1,7 @@
+var chain = require('animation-chain');
+
 $(function(){
   checkHash();
-
-  var chain = require('animation-chain');
 
   var mainOptions = {
     trackingMovement: false,
@@ -32,6 +32,10 @@ $(function(){
       });
     }, 500);
   }
+
+  $('.js-flip-button').on('click', function() {
+    $('.flippable').toggleClass('is-flipped');
+  });
 
   $('.js-card-image').on('click', function() {
     window.history.pushState({cardOpen: true}, "", "#open");

@@ -38,6 +38,13 @@ html, body {
   }
 }
 
+.flip-button {
+  z-index: 500;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
 .draggable-card-container {
   background-color: #f0f0f0;
   display: none;
@@ -159,7 +166,7 @@ html, body {
       }
     }
   }
-  img, .flippable {
+  img {
     max-height: 100%;
     position:relative;
     max-width: 100%;
@@ -207,6 +214,11 @@ html, body {
   height: 100%;
   width: 100%;
   z-index: 4;
+  max-height: 100%;
+  position:relative;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
   &.is-flipped {
     .front {
       @include transform(rotateY(-180deg) translateZ(0px));
@@ -216,6 +228,9 @@ html, body {
       @include transform(rotateY(0deg) translateZ(0px));
       visibility: visible;
     }
+  }
+  &.draggable-card {
+    height: 475px;
   }
   .front, .back {
     display: block;
@@ -233,7 +248,7 @@ html, body {
   }
   .back {
     @include transform(rotateY(-180deg) translateZ(0px));
-    visibility: hidden;
+    visibility: visible;
   }
 }
 

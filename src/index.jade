@@ -12,11 +12,15 @@ html(lang="en")
     .loader.center-this
     .content-container
       .draggable-card-container
+        .js-flip-button.flip-button.
+          Flip me
         ul.inner-container
           li
             img(alt="", src="img/envelope.png")
           li.hammer-me
-            img.draggable-card(alt="", src="img/card.png")
+            .flippable.draggable-card(alt="", src="img/card.png")
+              img.front(alt="", src="img/card.png")
+              img.back(alt="", src="img/card_back.png")
       .card-holder
         .card-image-holder.js-card-image
           .card-image.flippable
