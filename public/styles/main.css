@@ -762,7 +762,7 @@ html.card-overlay, body.card-overlay {
   left: 50%;
   width: 70%;
   position: absolute;
-  bottom: -10px;
+  bottom: 0px;
   opacity: 0;
   z-index: 1;
   -moz-transform: translate(-50%, 0);
@@ -942,15 +942,16 @@ html.card-overlay, body.card-overlay {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -moz-transition: -moz-transform 0.5s linear;
-  -o-transition: -o-transform 0.5s linear;
-  -webkit-transition: -webkit-transform 0.5s linear;
-  transition: transform 0.5s linear;
+  -moz-transition: -moz-transform 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: -o-transform 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.75s cubic-bezier(0.86, 0, 0.07, 1);
   position: absolute;
-  height: 100%;
+  height: auto;
   width: 100%;
+  bottom: 0;
 }
-/* line 229, ../../src/styles/main.scss */
+/* line 230, ../../src/styles/main.scss */
 .flippable .front {
   -moz-transform: rotateY(0deg) translateZ(0px);
   -ms-transform: rotateY(0deg) translateZ(0px);
@@ -958,7 +959,7 @@ html.card-overlay, body.card-overlay {
   transform: rotateY(0deg) translateZ(0px);
   visibility: visible;
 }
-/* line 233, ../../src/styles/main.scss */
+/* line 234, ../../src/styles/main.scss */
 .flippable .back {
   -moz-transform: rotateY(-180deg) translateZ(0px);
   -ms-transform: rotateY(-180deg) translateZ(0px);
@@ -967,7 +968,7 @@ html.card-overlay, body.card-overlay {
   visibility: hidden;
 }
 
-/* line 239, ../../src/styles/main.scss */
+/* line 240, ../../src/styles/main.scss */
 .center-this {
   left: 50%;
   top: 50%;
@@ -977,30 +978,30 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 244, ../../src/styles/main.scss */
+/* line 245, ../../src/styles/main.scss */
 .center-this.loader {
   position: absolute;
 }
 
-/* line 249, ../../src/styles/main.scss */
+/* line 250, ../../src/styles/main.scss */
 .subhead {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-/* line 254, ../../src/styles/main.scss */
+/* line 255, ../../src/styles/main.scss */
 .event-host {
   font-size: 12px;
   margin-top: 4px;
 }
 
-/* line 259, ../../src/styles/main.scss */
+/* line 260, ../../src/styles/main.scss */
 .event-name {
   font-size: 20px;
   margin-top: 5px;
 }
 
-/* line 264, ../../src/styles/main.scss */
+/* line 265, ../../src/styles/main.scss */
 .actions-container {
   background-color: #fff;
   height: 180px;
@@ -1011,26 +1012,26 @@ html.card-overlay, body.card-overlay {
   top: -15px;
 }
 
-/* line 274, ../../src/styles/main.scss */
+/* line 275, ../../src/styles/main.scss */
 .content-container {
   height: 100%;
   min-height: 560px;
   width: 100%;
 }
 
-/* line 280, ../../src/styles/main.scss */
+/* line 281, ../../src/styles/main.scss */
 .event-details {
   font-size: 14px;
   text-align: center;
   padding-bottom: 20px;
 }
 
-/* line 286, ../../src/styles/main.scss */
+/* line 287, ../../src/styles/main.scss */
 .placeholder-container {
   padding: 10px;
 }
 
-/* line 290, ../../src/styles/main.scss */
+/* line 291, ../../src/styles/main.scss */
 .placeholder-box {
   background-color: #eee;
   border: 1px solid #DEDEDE;
@@ -1038,7 +1039,7 @@ html.card-overlay, body.card-overlay {
   height: 100px;
 }
 
-/* line 297, ../../src/styles/main.scss */
+/* line 298, ../../src/styles/main.scss */
 .action {
   display: inline-block;
   background-color: #ffffff;
@@ -1052,11 +1053,11 @@ html.card-overlay, body.card-overlay {
   width: 130px;
   text-align: center;
 }
-/* line 309, ../../src/styles/main.scss */
+/* line 310, ../../src/styles/main.scss */
 .action:first-child {
   margin-right: 10px;
 }
-/* line 312, ../../src/styles/main.scss */
+/* line 313, ../../src/styles/main.scss */
 .action.animate-in {
   -webkit-animation: info-in 0.25s;
   -moz-animation: info-in 0.25s;
@@ -1069,7 +1070,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 317, ../../src/styles/main.scss */
+/* line 318, ../../src/styles/main.scss */
 .action.animate-in:first-child {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
@@ -1077,7 +1078,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-delay: 1s;
   animation-delay: 1s;
 }
-/* line 320, ../../src/styles/main.scss */
+/* line 321, ../../src/styles/main.scss */
 .action.animate-in:last-child {
   -webkit-animation-delay: 1.15s;
   -moz-animation-delay: 1.15s;

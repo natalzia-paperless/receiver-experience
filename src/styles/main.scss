@@ -133,7 +133,7 @@ html, body {
     left: 50%;
     width: 70%;
     position: absolute;
-    bottom: -10px;
+    bottom: 0px;
     opacity: 0;
     z-index: 1;
     @include transform(translate(-50%, 0));
@@ -221,10 +221,11 @@ html, body {
     display: block;
     @include prefix(backface-visibility, hidden);
     @include prefix(transform-style, preserve-3d);
-    @include transition(transform .5s linear);
+    @include transition(transform .75s cubic-bezier(0.86, 0, 0.07, 1));
     position: absolute;
-    height: 100%;
+    height: auto;
     width: 100%;
+    bottom: 0;
   }
   .front {
     @include transform(rotateY(0deg) translateZ(0px));
