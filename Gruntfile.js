@@ -18,6 +18,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    browserify: {
+      dist: {
+        files: {
+          'public/javascripts/app.js': ['src/javascripts/app.js'],
+        },
+        options: {
+        }
+      }
+    },
     connect: {
       server: {
         options: {
@@ -35,9 +44,9 @@ module.exports = function(grunt) {
     copy: {
       js: {
         expand: true,
-        cwd: 'src/javascripts',
+        cwd: 'src/javascripts/lib',
         src: '**',
-        dest: 'public/javascripts',
+        dest: 'public/javascripts/lib',
         flatten: false,
         filter: 'isFile'
       },
@@ -75,7 +84,11 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        files: ['src/javascripts/**/*.js'],
+        files: ['src/javascripts/app.js'],
+        tasks: ['browserify']
+      },
+      libScripts: {
+        files: ['src/javascripts/lib/**/*.js'],
         tasks: ['copy']
       },
       scss: {
@@ -101,8 +114,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browserify');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean:public', 'jade', 'compass', 'copy', 'watch']);
+  grunt.registerTask('default', ['clean:public', 'jade', 'compass', 'browserify', 'copy', 'watch']);
 
 };

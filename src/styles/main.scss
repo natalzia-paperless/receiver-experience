@@ -129,6 +129,7 @@ html, body {
   max-height: 485px;
   .card-image-holder {
     max-height: 90%;
+    height: 90%;
     left: 50%;
     width: 70%;
     position: absolute;
@@ -158,13 +159,12 @@ html, body {
       }
     }
   }
-  img {
+  img, .flippable {
     max-height: 100%;
     position:relative;
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    @include box-shadow(0px 0px 2px 1px rgba(0,0,0,0.2));
     &.envelope {
       position: absolute;
       left: 18%;
@@ -173,7 +173,7 @@ html, body {
       @include transform(translate(-50%, -50%));
       z-index: -1;
       @include prefix(transform-origin, -80% 90%);
-      @include prefix(transform, rotate(-42deg));
+      @include prefix(transform, rotate(-42deg) translateZ(-100px));
       @include box-shadow(none);
       @include transition(left .25s cubic-bezier(0.86, 0, 0.07, 1));
       &.animate-in {
@@ -198,6 +198,41 @@ html, body {
     //@include prefix(animation-timing-function, ease-in);
     @include prefix(animation-fill-mode, forwards);
     @include prefix(animation-delay, .85s);
+  }
+}
+
+.flippable {
+  //@include prefix(perspective, 1400px);
+  @include prefix(transform-style, preserve-3d);
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  &.is-flipped {
+    .front {
+      @include transform(rotateY(-180deg) translateZ(0px));
+      visibility: visible;
+    }
+    .back {
+      @include transform(rotateY(0deg) translateZ(0px));
+      visibility: visible;
+    }
+  }
+  .front, .back {
+    display: block;
+    @include prefix(backface-visibility, hidden);
+    @include prefix(transform-style, preserve-3d);
+    @include transition(transform .5s linear);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .front {
+    @include transform(rotateY(0deg) translateZ(0px));
+    visibility: visible;
+  }
+  .back {
+    @include transform(rotateY(-180deg) translateZ(0px));
+    visibility: hidden;
   }
 }
 
@@ -241,7 +276,7 @@ html, body {
   min-height: 560px;
   width: 100%;
 }
- 
+
 .event-details {
   font-size: 14px;
   text-align: center;
@@ -278,7 +313,7 @@ html, body {
     $duration: .25s;
     @include prefix(animation, info-in $duration);
     @include prefix(animation-fill-mode, forwards);
-    
+
     &:first-child {
       @include prefix(animation-delay, 1s);
     }

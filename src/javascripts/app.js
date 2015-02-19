@@ -23,6 +23,10 @@ $(function(){
         $('.event-info').addClass('animate-in');
         $('.action').addClass('animate-in');
         $('.envelope').addClass('animate-in');
+        setTimeout(function() {
+          //flip card
+          $('.flippable').addClass('is-flipped');
+        }, 2000);
       });
     }, 500);
   }
@@ -61,7 +65,7 @@ $(function(){
     }
 
     e.preventDefault();
-    
+
     moveCard(deltaX, deltaY);
   });
 
@@ -106,7 +110,7 @@ $(function(){
     }
   }
 
-  function moveCard(x, y){ 
+  function moveCard(x, y){
     var currentPosition = {
       top: $card.position().top,
       left: $card.position().left

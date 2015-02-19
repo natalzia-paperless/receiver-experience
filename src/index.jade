@@ -19,7 +19,9 @@ html(lang="en")
             img.draggable-card(alt="", src="img/card.png")
       .card-holder
         .card-image-holder.js-card-image
-          img.card-image(alt="", src="img/card.png")
+          .card-image.flippable
+            img.front(alt="", src="img/card.png")
+            img.back(alt="", src="img/card_back.png")
           img.envelope(alt="", src="img/envelope.png")
       .actions-container
         .center-this
