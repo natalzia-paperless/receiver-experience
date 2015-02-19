@@ -110,8 +110,13 @@ $(function(){
       var w = $('.hammer-me img').width();
       var h = $('.hammer-me img').height();
       $('.hammer-me img').css({
-        left: (-w/2) + "px",
-        top: (-h/2) + "px"
+        left: (-w/4) + "px",
+        top: (-h/4) + "px"
+      });
+    } else {
+      $('.hammer-me img').css({
+        left: "",
+        top: ""
       });
     }
   }

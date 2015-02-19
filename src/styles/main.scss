@@ -221,7 +221,7 @@ html, body {
   display: block;
   &.is-flipped {
     .front {
-      @include transform(rotateY(-180deg) translateZ(0px));
+      @include transform(rotateY(180deg) translateZ(0px));
       visibility: visible;
     }
     .back {
@@ -247,7 +247,7 @@ html, body {
     visibility: visible;
   }
   .back {
-    @include transform(rotateY(-180deg) translateZ(0px));
+    @include transform(rotateY(180deg) translateZ(0px));
     visibility: visible;
   }
 }

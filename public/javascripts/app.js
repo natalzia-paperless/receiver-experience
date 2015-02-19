@@ -1,6 +1,59 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-/*! animation-chain - v 0.1.0 -  2015-02-19 */
-var requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1e3/60)}}(),Chain=function(a,b){var c={ticks:[],init:function(a,b){c.ticks=[{cb:a,time:b}],requestAnimFrame(c.tick)},tick:function(a){c.startTime||(c.startTime=a);for(var b=0;b<c.ticks.length;b++){var d=c.ticks[b];if(a-c.startTime>=d.time&&(d.cb(),c.ticks.splice(0,1),0===c.ticks.length))return}requestAnimFrame(c.tick)},chainTo:function(a,b){var d=c.ticks[c.ticks.length-1];c.ticks.push({cb:a,time:b+d.time})}};return c.init(a,b),c};module.exports=Chain;
+var requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+var Chain = function(callback, time) {
+  var obj = {
+    ticks: [],
+    init: function(cb, t) {
+      obj.ticks = [
+        {
+          cb: cb,
+          time: t
+        }
+      ];
+      requestAnimFrame(obj.tick);
+    },
+    tick: function(timestep) {
+      if (!obj.startTime) {
+        obj.startTime = timestep;
+      }
+
+      for (var i = 0; i < obj.ticks.length; i++) {
+        var currentTick = obj.ticks[i];
+        if ((timestep - obj.startTime) >= currentTick.time) {
+          currentTick.cb();
+          obj.ticks.splice(0,1);
+          if (obj.ticks.length === 0) {
+            return;
+          }
+        }
+      }
+
+      requestAnimFrame(obj.tick);
+    },
+    chainTo: function(cb, newTime) {
+      var lastTick = obj.ticks[obj.ticks.length-1];
+      obj.ticks.push({
+        cb: cb,
+        time: newTime + lastTick.time
+      });
+    }
+  };
+
+  obj.init(callback, time);
+
+  return obj;
+};
+
+module.exports = Chain;
+
 },{}],2:[function(require,module,exports){
 var chain = require('animation-chain');
 
@@ -114,8 +167,13 @@ $(function(){
       var w = $('.hammer-me img').width();
       var h = $('.hammer-me img').height();
       $('.hammer-me img').css({
-        left: (-w/2) + "px",
-        top: (-h/2) + "px"
+        left: (-w/4) + "px",
+        top: (-h/4) + "px"
+      });
+    } else {
+      $('.hammer-me img').css({
+        left: "",
+        top: ""
       });
     }
   }

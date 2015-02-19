@@ -928,10 +928,10 @@ html.card-overlay, body.card-overlay {
 }
 /* line 223, ../../src/styles/main.scss */
 .flippable.is-flipped .front {
-  -moz-transform: rotateY(-180deg) translateZ(0px);
-  -ms-transform: rotateY(-180deg) translateZ(0px);
-  -webkit-transform: rotateY(-180deg) translateZ(0px);
-  transform: rotateY(-180deg) translateZ(0px);
+  -moz-transform: rotateY(180deg) translateZ(0px);
+  -ms-transform: rotateY(180deg) translateZ(0px);
+  -webkit-transform: rotateY(180deg) translateZ(0px);
+  transform: rotateY(180deg) translateZ(0px);
   visibility: visible;
 }
 /* line 227, ../../src/styles/main.scss */
@@ -978,10 +978,10 @@ html.card-overlay, body.card-overlay {
 }
 /* line 249, ../../src/styles/main.scss */
 .flippable .back {
-  -moz-transform: rotateY(-180deg) translateZ(0px);
-  -ms-transform: rotateY(-180deg) translateZ(0px);
-  -webkit-transform: rotateY(-180deg) translateZ(0px);
-  transform: rotateY(-180deg) translateZ(0px);
+  -moz-transform: rotateY(180deg) translateZ(0px);
+  -ms-transform: rotateY(180deg) translateZ(0px);
+  -webkit-transform: rotateY(180deg) translateZ(0px);
+  transform: rotateY(180deg) translateZ(0px);
   visibility: visible;
 }
 
