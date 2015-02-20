@@ -18,17 +18,21 @@ $(function(){
   var img = new Image();
   img.src = src;
   img.onload = function() {
-    chain(function(){
+    var chainPostLoad = {
+      callback: function() {
+        //flip card
+        $('.flippable').addClass('is-flipped');
+      },
+      time: 2000
+    };
+    setTimeout(function(){
       $('.loader').animate({opacity:0}, function() {
         $(this).remove();
         $('.card-image-holder').addClass('animate-in');
         $('.event-info').addClass('animate-in');
         $('.action').addClass('animate-in');
         $('.envelope').addClass('animate-in');
-        chain(function() {
-          //flip card
-          $('.flippable').addClass('is-flipped');
-        }, 2000);
+        chain(chainPostLoad);
       });
     }, 500);
   }
@@ -40,6 +44,11 @@ $(function(){
   $('.js-card-image').on('click', function() {
     window.history.pushState({cardOpen: true}, "", "#open");
     openCardOverlay();
+  });
+
+  $('.js-close-button').on('click', function() {
+    window.history.pushState({cardOpen: false}, "", "#closed");
+    closeCardOverlay();
   });
 
 
@@ -84,7 +93,7 @@ $(function(){
       console.log('tap tap');
       zoomImage();
     }
-    chain(function() {
+    setTimeout(function() {
       if (mainOptions.numTouches === 1 && !mainOptions.trackingMovement) {
         var touch = mainOptions.lastTouchEvent;
         if (!touch) return;
@@ -93,8 +102,9 @@ $(function(){
         console.log(xy.x);
         console.log(mainOptions.initialTouch.x);
         if (xy.x === mainOptions.initialTouch.x) {
-          window.history.pushState({cardOpen: false}, "", "#closed");
-          closeCardOverlay();
+          //window.history.pushState({cardOpen: false}, "", "#closed");
+          //closeCardOverlay(); instead of closing the overlay, flip the card
+          $('.flippable').toggleClass('is-flipped');
         }
       }
       mainOptions.numTouches = 0;
@@ -145,7 +155,7 @@ $(function(){
     $('html, body').addClass('card-overlay');
     $('.js-card-image').addClass('grow-pls is-in').removeClass('animate-in');
 
-    chain(function() {
+    setTimeout(function() {
       $dragCardContainer.removeClass('close').addClass('open');
       var screenWidth = $(window).width();
 
@@ -187,7 +197,7 @@ $(function(){
 
     $dragCardContainer.removeClass('open').addClass('close');
 
-    chain(function() {
+    setTimeout(function() {
       $('html, body').removeClass('card-overlay');
       $('.js-card-image').removeClass('grow-pls');
       $dragCardContainer.removeClass('close');

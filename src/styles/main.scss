@@ -45,6 +45,13 @@ html, body {
   bottom: 15px;
 }
 
+.close-button {
+  z-index: 500;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+
 .draggable-card-container {
   background-color: #f0f0f0;
   display: none;

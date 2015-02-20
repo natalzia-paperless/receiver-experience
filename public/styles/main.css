@@ -643,6 +643,14 @@ html.card-overlay, body.card-overlay {
 }
 
 /* line 48, ../../src/styles/main.scss */
+.close-button {
+  z-index: 500;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+
+/* line 55, ../../src/styles/main.scss */
 .draggable-card-container {
   background-color: #f0f0f0;
   display: none;
@@ -668,11 +676,11 @@ html.card-overlay, body.card-overlay {
     }
   }*/
 }
-/* line 61, ../../src/styles/main.scss */
+/* line 68, ../../src/styles/main.scss */
 .draggable-card-container.no-scroll {
   overflow-x: hidden;
 }
-/* line 64, ../../src/styles/main.scss */
+/* line 71, ../../src/styles/main.scss */
 .draggable-card-container.open {
   display: block;
   -webkit-animation: fade-in 0.35s;
@@ -691,7 +699,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 73, ../../src/styles/main.scss */
+/* line 80, ../../src/styles/main.scss */
 .draggable-card-container.close {
   display: block;
   -webkit-animation: fade-out 0.35s;
@@ -710,7 +718,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 81, ../../src/styles/main.scss */
+/* line 88, ../../src/styles/main.scss */
 .draggable-card-container .inner-container {
   display: block;
   padding: 0;
@@ -720,7 +728,7 @@ html.card-overlay, body.card-overlay {
   height: 100%;
   list-style-type: none;
 }
-/* line 91, ../../src/styles/main.scss */
+/* line 98, ../../src/styles/main.scss */
 .draggable-card-container li {
   display: block;
   float: left;
@@ -730,11 +738,11 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: translateY(-50%) translateZ(0);
   top: 50%;
 }
-/* line 99, ../../src/styles/main.scss */
+/* line 106, ../../src/styles/main.scss */
 .draggable-card-container li img {
   max-width: 100%;
 }
-/* line 101, ../../src/styles/main.scss */
+/* line 108, ../../src/styles/main.scss */
 .draggable-card-container li img.scaled {
   max-width: none;
   position: absolute;
@@ -742,17 +750,17 @@ html.card-overlay, body.card-overlay {
   left: 50%;
   width: 200%;
 }
-/* line 110, ../../src/styles/main.scss */
+/* line 117, ../../src/styles/main.scss */
 .draggable-card-container li:first-child {
   padding-left: 4.5%;
 }
 
-/* line 127, ../../src/styles/main.scss */
+/* line 134, ../../src/styles/main.scss */
 .none {
   display: none !important;
 }
 
-/* line 131, ../../src/styles/main.scss */
+/* line 138, ../../src/styles/main.scss */
 .card-holder {
   background-color: #f0f0f0;
   height: -webkit-calc(100% - 170px);
@@ -763,7 +771,7 @@ html.card-overlay, body.card-overlay {
   width: 100%;
   max-height: 485px;
 }
-/* line 137, ../../src/styles/main.scss */
+/* line 144, ../../src/styles/main.scss */
 .card-holder .card-image-holder {
   max-height: 90%;
   height: 90%;
@@ -782,7 +790,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
 }
-/* line 148, ../../src/styles/main.scss */
+/* line 155, ../../src/styles/main.scss */
 .card-holder .card-image-holder.animate-in {
   -webkit-animation: card-in 0.75s;
   -moz-animation: card-in 0.75s;
@@ -796,7 +804,7 @@ html.card-overlay, body.card-overlay {
   animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   opacity: 1;
 }
-/* line 155, ../../src/styles/main.scss */
+/* line 162, ../../src/styles/main.scss */
 .card-holder .card-image-holder.is-in {
   opacity: 1;
   -webkit-transform: translateY(-50%, 0);
@@ -805,7 +813,7 @@ html.card-overlay, body.card-overlay {
   -o-transform: translateY(-50%, 0);
   transform: translateY(-50%, 0);
 }
-/* line 159, ../../src/styles/main.scss */
+/* line 166, ../../src/styles/main.scss */
 .card-holder .card-image-holder.grow-pls {
   -moz-transform: translate(-50%, 0) scale(1.3);
   -ms-transform: translate(-50%, 0) scale(1.3);
@@ -817,7 +825,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1), bottom 0.6s;
 }
-/* line 163, ../../src/styles/main.scss */
+/* line 170, ../../src/styles/main.scss */
 .card-holder .card-image-holder.grow-pls .envelope {
   left: -100%;
   -moz-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
@@ -825,7 +833,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   transition: left 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
-/* line 169, ../../src/styles/main.scss */
+/* line 176, ../../src/styles/main.scss */
 .card-holder img {
   max-height: 100%;
   position: relative;
@@ -833,7 +841,7 @@ html.card-overlay, body.card-overlay {
   margin: 0 auto;
   display: block;
 }
-/* line 175, ../../src/styles/main.scss */
+/* line 182, ../../src/styles/main.scss */
 .card-holder img.envelope {
   position: absolute;
   left: 18%;
@@ -862,7 +870,7 @@ html.card-overlay, body.card-overlay {
   -webkit-transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
   transition: left 0.25s cubic-bezier(0.86, 0, 0.07, 1);
 }
-/* line 186, ../../src/styles/main.scss */
+/* line 193, ../../src/styles/main.scss */
 .card-holder img.envelope.animate-in {
   -webkit-animation: fade-in 0.35s;
   -moz-animation: fade-in 0.35s;
@@ -886,12 +894,12 @@ html.card-overlay, body.card-overlay {
   animation-delay: 1.6s;
 }
 
-/* line 199, ../../src/styles/main.scss */
+/* line 206, ../../src/styles/main.scss */
 .event-info {
   opacity: 0;
   position: relative;
 }
-/* line 202, ../../src/styles/main.scss */
+/* line 209, ../../src/styles/main.scss */
 .event-info.animate-in {
   -webkit-animation: info-in 0.35s;
   -moz-animation: info-in 0.35s;
@@ -910,7 +918,7 @@ html.card-overlay, body.card-overlay {
   animation-delay: 0.85s;
 }
 
-/* line 211, ../../src/styles/main.scss */
+/* line 218, ../../src/styles/main.scss */
 .flippable {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -926,7 +934,7 @@ html.card-overlay, body.card-overlay {
   margin: 0 auto;
   display: block;
 }
-/* line 223, ../../src/styles/main.scss */
+/* line 230, ../../src/styles/main.scss */
 .flippable.is-flipped .front {
   -moz-transform: rotateY(180deg) translateZ(0px);
   -ms-transform: rotateY(180deg) translateZ(0px);
@@ -934,7 +942,7 @@ html.card-overlay, body.card-overlay {
   transform: rotateY(180deg) translateZ(0px);
   visibility: visible;
 }
-/* line 227, ../../src/styles/main.scss */
+/* line 234, ../../src/styles/main.scss */
 .flippable.is-flipped .back {
   -moz-transform: rotateY(0deg) translateZ(0px);
   -ms-transform: rotateY(0deg) translateZ(0px);
@@ -942,11 +950,11 @@ html.card-overlay, body.card-overlay {
   transform: rotateY(0deg) translateZ(0px);
   visibility: visible;
 }
-/* line 232, ../../src/styles/main.scss */
+/* line 239, ../../src/styles/main.scss */
 .flippable.draggable-card {
   height: 475px;
 }
-/* line 235, ../../src/styles/main.scss */
+/* line 242, ../../src/styles/main.scss */
 .flippable .front, .flippable .back {
   display: block;
   -webkit-backface-visibility: hidden;
@@ -968,7 +976,7 @@ html.card-overlay, body.card-overlay {
   width: 100%;
   bottom: 0;
 }
-/* line 245, ../../src/styles/main.scss */
+/* line 252, ../../src/styles/main.scss */
 .flippable .front {
   -moz-transform: rotateY(0deg) translateZ(0px);
   -ms-transform: rotateY(0deg) translateZ(0px);
@@ -976,7 +984,7 @@ html.card-overlay, body.card-overlay {
   transform: rotateY(0deg) translateZ(0px);
   visibility: visible;
 }
-/* line 249, ../../src/styles/main.scss */
+/* line 256, ../../src/styles/main.scss */
 .flippable .back {
   -moz-transform: rotateY(180deg) translateZ(0px);
   -ms-transform: rotateY(180deg) translateZ(0px);
@@ -985,7 +993,7 @@ html.card-overlay, body.card-overlay {
   visibility: visible;
 }
 
-/* line 255, ../../src/styles/main.scss */
+/* line 262, ../../src/styles/main.scss */
 .center-this {
   left: 50%;
   top: 50%;
@@ -995,30 +1003,30 @@ html.card-overlay, body.card-overlay {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 260, ../../src/styles/main.scss */
+/* line 267, ../../src/styles/main.scss */
 .center-this.loader {
   position: absolute;
 }
 
-/* line 265, ../../src/styles/main.scss */
+/* line 272, ../../src/styles/main.scss */
 .subhead {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-/* line 270, ../../src/styles/main.scss */
+/* line 277, ../../src/styles/main.scss */
 .event-host {
   font-size: 12px;
   margin-top: 4px;
 }
 
-/* line 275, ../../src/styles/main.scss */
+/* line 282, ../../src/styles/main.scss */
 .event-name {
   font-size: 20px;
   margin-top: 5px;
 }
 
-/* line 280, ../../src/styles/main.scss */
+/* line 287, ../../src/styles/main.scss */
 .actions-container {
   background-color: #fff;
   height: 180px;
@@ -1029,26 +1037,26 @@ html.card-overlay, body.card-overlay {
   top: -15px;
 }
 
-/* line 290, ../../src/styles/main.scss */
+/* line 297, ../../src/styles/main.scss */
 .content-container {
   height: 100%;
   min-height: 560px;
   width: 100%;
 }
 
-/* line 296, ../../src/styles/main.scss */
+/* line 303, ../../src/styles/main.scss */
 .event-details {
   font-size: 14px;
   text-align: center;
   padding-bottom: 20px;
 }
 
-/* line 302, ../../src/styles/main.scss */
+/* line 309, ../../src/styles/main.scss */
 .placeholder-container {
   padding: 10px;
 }
 
-/* line 306, ../../src/styles/main.scss */
+/* line 313, ../../src/styles/main.scss */
 .placeholder-box {
   background-color: #eee;
   border: 1px solid #DEDEDE;
@@ -1056,7 +1064,7 @@ html.card-overlay, body.card-overlay {
   height: 100px;
 }
 
-/* line 313, ../../src/styles/main.scss */
+/* line 320, ../../src/styles/main.scss */
 .action {
   display: inline-block;
   background-color: #ffffff;
@@ -1070,11 +1078,11 @@ html.card-overlay, body.card-overlay {
   width: 130px;
   text-align: center;
 }
-/* line 325, ../../src/styles/main.scss */
+/* line 332, ../../src/styles/main.scss */
 .action:first-child {
   margin-right: 10px;
 }
-/* line 328, ../../src/styles/main.scss */
+/* line 335, ../../src/styles/main.scss */
 .action.animate-in {
   -webkit-animation: info-in 0.25s;
   -moz-animation: info-in 0.25s;
@@ -1087,7 +1095,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 333, ../../src/styles/main.scss */
+/* line 340, ../../src/styles/main.scss */
 .action.animate-in:first-child {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
@@ -1095,7 +1103,7 @@ html.card-overlay, body.card-overlay {
   -o-animation-delay: 1s;
   animation-delay: 1s;
 }
-/* line 336, ../../src/styles/main.scss */
+/* line 343, ../../src/styles/main.scss */
 .action.animate-in:last-child {
   -webkit-animation-delay: 1.15s;
   -moz-animation-delay: 1.15s;
